@@ -22,7 +22,6 @@ public class Categoria {
 	@Size(min = 5)
 	private String categoriaSustentavel;
 
-	@NotEmpty(message = "Não pode ser nulo!")
 	private int categoriaRanking;
 
 	@NotEmpty(message = "Não pode ser nulo!")
