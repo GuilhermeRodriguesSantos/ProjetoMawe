@@ -1,10 +1,14 @@
 package com.Mawe.ProjetoIntegrador.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -29,6 +33,7 @@ public class Usuario {
 
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 10)
+	@Email
 	private String email;
 
 	@NotEmpty(message = "Não pode ser nulo!")
@@ -38,6 +43,17 @@ public class Usuario {
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 10)
 	private String tipoUsuario;
+
+	@OneToMany (mappedBy = "usuario")
+	private List<Produto> produto;
+	
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
 
 	public long getId() {
 		return id;
