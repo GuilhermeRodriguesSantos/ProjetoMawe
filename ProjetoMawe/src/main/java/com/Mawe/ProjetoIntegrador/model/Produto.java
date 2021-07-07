@@ -4,20 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
 /**
- * Definindo os atributos da tabela Produto, com seus tipos e restrições
- * @version 1.0
- * @since 1.0
- * @author Guilherme
- *
+ * Abstração e instanciação de objetos/recursos. Definindo os atributos da
+ * tabela Produto, com seus tipos e restrições
+ * 
+ * Última atualização: julho de 2021
+ * 
+ * @author desenvolvedores Mawé
  */
-
 @Entity
 @Table(name = "tb_produto")
 public class Produto {
@@ -39,9 +39,31 @@ public class Produto {
 
 	@NotNull(message = "O nome não pode ser nulo")
 	private int quantidade;
-	
+
 	@NotEmpty(message = "Esse campo precisa ter a url da foto")
 	private String url;
+
+	@ManyToOne
+	private Categoria categoria;
+
+	@ManyToOne
+	private Usuario usuario;
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public long getId() {
 		return id;
