@@ -3,8 +3,6 @@ package com.Mawe.ProjetoIntegrador.controller;
 import java.util.List;
 
 import javax.validation.Valid;
-
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.Mawe.ProjetoIntegrador.DTO.UsuarioDTO;
 import com.Mawe.ProjetoIntegrador.model.Usuario;
 import com.Mawe.ProjetoIntegrador.repository.UsuarioRepository;
@@ -68,11 +65,6 @@ public class UsuarioController {
 	public void DeletarUsuario(@PathVariable long id) {
 		repository.deleteById(id);
 	}
-	
-	/*@DeleteMapping ("/deletar/{id}")
-	public ResponseEntity<Usuario>DeletarUsuario(@PathVariable long id){
-		return ResponseEntity.status(204).body(repository.deleteById(id));
-	}*/
 	
 
 }
