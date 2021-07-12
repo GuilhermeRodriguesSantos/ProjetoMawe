@@ -28,20 +28,20 @@ public class Usuario {
 	private long id;
 
 	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 10)
+	@Size(min = 5)
 	private String nome;
 
 	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 10)
+	@Size(min = 5)
 	@Email
 	private String email;
 
 	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 10)
+	@Size(min = 5)
 	private String senha;
 
 	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 10)
+	@Size(min = 5)
 	private String tipoUsuario;
 
 	@OneToMany (mappedBy = "usuario")
