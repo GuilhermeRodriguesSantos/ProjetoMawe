@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.Mawe.ProjetoIntegrador.DTO.UsuarioDTO;
 import com.Mawe.ProjetoIntegrador.DTO.UsuarioLoginDTO;
+import com.Mawe.ProjetoIntegrador.model.Produto;
 import com.Mawe.ProjetoIntegrador.model.Usuario;
 import com.Mawe.ProjetoIntegrador.repository.UsuarioRepository;
 import com.Mawe.ProjetoIntegrador.service.UsuarioService;
 
 @RestController
 @RequestMapping("/ProjetoMawe/Usuario/")
+@CrossOrigin("*")
 public class UsuarioController {
 
 	@Autowired
@@ -32,7 +36,7 @@ public class UsuarioController {
 	@PostMapping("Cadastrar")
 	public ResponseEntity<Object> CadastrarUsuario(@RequestBody @Valid Usuario novoUsuario) {
 		Optional<Object> cadastro = service.CadastrarUsuario(novoUsuario);
-
+		
 		if (cadastro.isEmpty()) {
 			return ResponseEntity.status(200).body("Usuario Existente");
 		} else {
@@ -47,7 +51,7 @@ public class UsuarioController {
 	}
 
 	@PutMapping("alterar/{id}")
-	public ResponseEntity<Usuario> alterar(@Valid @PathVariable long id, @Valid @RequestBody UsuarioDTO novoUsuario) {
+	public ResponseEntity<Usuario> alterar(@Valid @PathVariable Long id, @Valid @RequestBody UsuarioDTO novoUsuario) {
 		return service.alterar(id, novoUsuario).map(usuarioNovo -> ResponseEntity.status(201).body(usuarioNovo))
 				.orElseGet(() -> {
 					return ResponseEntity.badRequest().build();
@@ -55,7 +59,7 @@ public class UsuarioController {
 	}
 
 	@DeleteMapping("deletar/{id}")
-	public void DeletarUsuario(@PathVariable long id) {
+	public void DeletarUsuario(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
 
@@ -75,8 +79,25 @@ public class UsuarioController {
 	}
 
 	@GetMapping("buscar/{id}")
-	public ResponseEntity<Usuario> BuscarId(@PathVariable long id) {
+	public ResponseEntity<Usuario> BuscarId(@PathVariable Long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	}
+	/**
+	 * Criar um produto quando o Usuário é Empresa (tipoUsuario)
+	 * @param id ou tipoUsuario
+	 * @param novoProduto
+	 * @return
+	 */
+	@PostMapping("/{id_usuario}/novo/produto")
+	public ResponseEntity<?> cadastrarProduto(
+			@PathVariable(value = "id_usuario") Long id,
+			@Valid @RequestBody Produto novoProduto){
+		Optional<Produto> produtoCriado = service.criarProduto(novoProduto, id, novoProduto.getCategoria());
+		if (!produtoCriado.isEmpty()) {
+			return ResponseEntity.status(HttpStatus.CREATED).body(produtoCriado.get());
+		} else {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario não é uma empresa, então ele não pode criar um produto");
+		}
 	}
 
 }
