@@ -2,6 +2,8 @@ package com.Mawe.ProjetoIntegrador.DTO;
 
 import javax.validation.constraints.NotEmpty;
 
+import com.Mawe.ProjetoIntegrador.model.util.TipoUsuario;
+
 public class UsuarioLoginDTO {
 	
 	private long id;
@@ -12,7 +14,7 @@ public class UsuarioLoginDTO {
 	
 	@NotEmpty (message = "Campo não pode estar vazio")
 	private String senha;
-	private String tipoUsuario;
+	private TipoUsuario tipoUsuario;
 	private String token;
 	public long getId() {
 		return id;
@@ -38,17 +40,17 @@ public class UsuarioLoginDTO {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
+
 	public String getToken() {
 		return token;
 	}
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 }

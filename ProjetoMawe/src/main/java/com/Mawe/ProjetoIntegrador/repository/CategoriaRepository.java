@@ -8,11 +8,18 @@ import org.springframework.stereotype.Repository;
 
 import com.Mawe.ProjetoIntegrador.model.Categoria;
 
+/**
+ * Estabelecer comunicação com dados (MySQL)
+ * 
+ * Última atualização: julho de 2021
+ * 
+ * @author desenvolvedores Mawé
+ */
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-	Optional<Categoria> findByCategoriaSustentavel(String categoriaSustentavel);
+	Optional<Categoria> findBySegmentoEmpresa (String segmentoEmpresa);
 
-	List<Categoria> findAllByCategoriaSustentavelContaining(String categoriaSustentavel);
-	List<Categoria> findAllByCategoriaDoacaoContaining(String categoriaDoacao);
+	List<Categoria> findAllByMaterialReutilizadoContaining(String materialReutilizado);
+	List<Categoria> findAllByMaterialBiodegradavelContaining(String materialBiodegradavel);
 }
