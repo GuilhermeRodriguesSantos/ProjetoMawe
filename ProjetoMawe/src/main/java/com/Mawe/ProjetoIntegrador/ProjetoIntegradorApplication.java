@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class ProjetoIntegradorApplication {
 
+
 	@GetMapping
 	public ModelAndView swaggerUi() {
 	return new ModelAndView("redirect:/swagger-ui/");
