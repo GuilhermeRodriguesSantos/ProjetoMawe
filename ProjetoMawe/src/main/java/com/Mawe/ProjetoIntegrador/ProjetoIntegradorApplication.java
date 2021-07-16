@@ -21,5 +21,4 @@ public class ProjetoIntegradorApplication {
 		SpringApplication.run(ProjetoIntegradorApplication.class, args);
 		
 	}	
-
 }
