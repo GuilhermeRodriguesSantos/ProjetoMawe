@@ -61,7 +61,6 @@ public class ProdutoController {
 	@PutMapping("/alterar/{id}")
 	public ResponseEntity<Produto> Alterar(@Valid @PathVariable Produto alterar) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(alterar));
-
 	}
 
 	@DeleteMapping("/delete/{id}")
