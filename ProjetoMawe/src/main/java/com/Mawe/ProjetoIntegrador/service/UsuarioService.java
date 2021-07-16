@@ -10,15 +10,26 @@ import org.springframework.stereotype.Service;
 
 import com.Mawe.ProjetoIntegrador.DTO.UsuarioDTO;
 import com.Mawe.ProjetoIntegrador.DTO.UsuarioLoginDTO;
+import com.Mawe.ProjetoIntegrador.model.Categoria;
+import com.Mawe.ProjetoIntegrador.model.Produto;
 import com.Mawe.ProjetoIntegrador.model.Usuario;
+import com.Mawe.ProjetoIntegrador.model.util.TipoUsuario;
+import com.Mawe.ProjetoIntegrador.repository.CategoriaRepository;
+import com.Mawe.ProjetoIntegrador.repository.ProdutoRepository;
 import com.Mawe.ProjetoIntegrador.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository repository;
 	
+	@Autowired
+	private CategoriaRepository repositoryCategoria;
+
+	@Autowired
+	private ProdutoRepository repositoryProduto;
+
 	public Optional<Object> CadastrarUsuario(Usuario novoUuario) {
 		return repository.findByEmail(novoUuario.getEmail()).map(UsuarioExistente -> {
 			return Optional.empty();
@@ -29,17 +40,17 @@ public class UsuarioService {
 			return Optional.ofNullable(repository.save(novoUuario));
 		});
 	}
-	
-	public Optional<Usuario>alterar(long id, UsuarioDTO novoUsuario){
+
+	public Optional<Usuario> alterar(Long id, UsuarioDTO novoUsuario) {
 		return repository.findById(id).map(atualizarUsuario -> {
 			atualizarUsuario.setNome(novoUsuario.getNome());
 			atualizarUsuario.setSenha(novoUsuario.getSenha());
 			return Optional.ofNullable(repository.save(atualizarUsuario));
-		}).orElseGet(()->{
+		}).orElseGet(() -> {
 			return Optional.empty();
 		});
 	}
-	
+
 	public Optional<?> Logar(UsuarioLoginDTO dadosLogin) {
 		return repository.findByEmail(dadosLogin.getEmail()).map(UsuarioExistente -> {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -65,4 +76,21 @@ public class UsuarioService {
 		});
 	}
 
+	/**
+	 * Permite que apenas o usuário que possua o parametro EMPRESA possa
+	 * cadastrar um novoProduto
+	 *  
+	 */
+	public Optional<Produto> criarProduto(Produto novoProduto, Long idUsuario, Categoria novaCategoria) {
+
+		Optional<Usuario> usuarioExistente = repository.findById(idUsuario);
+		if (usuarioExistente.isPresent() && usuarioExistente.get().getTipoUsuario() == TipoUsuario.EMPRESA) {
+			Categoria categoriaCriada = repositoryCategoria.save(novaCategoria);
+			novoProduto.setEmpresaCriadora(usuarioExistente.get());
+			novoProduto.setCategoria(categoriaCriada);
+			return Optional.ofNullable(repositoryProduto.save(novoProduto));
+		} else {
+			return Optional.empty();
+		}
+	}
 }
