@@ -34,34 +34,58 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
+	/**
+	 * Este atributo permite o usuário acrescentar um nome
+	 */
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 5)
 	private String nome;
 
+	/**
+	 *  Este atributo permite o usuário acrescentar um email
+	 */
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 5)
 	@Email
 	private String email;
 
+	/**
+	 *  Este atributo permite o usuário acrescentar uma senha
+	 */
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 5)
 	private String senha;
-
+	
+	/**
+	 * Este parâmetro tipoUsuario define se quem ira se cadastrar é EMPRESA ou USUARIO
+	 através da classe de enumeração Enum
+	 */
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario; 
 	
+	/**
+	 *  Este atributo permite o usuário acrescentar um endereço
+	 */
 	//observação, retirada de notempty, size
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 5)
 	private String endereco;
 
+	/**
+	 * Este parâmetro, que descende da tabela
+	 Produto, relaciona um usuário que poderá cadastrar muitos produtos
+	 */
 	//alterado
 	@JsonIgnoreProperties ({"empresaCriadora", "categoria"})
 	@OneToMany (mappedBy = "empresaCriadora")
 	private List<Produto> produtosCadastrados;
 	
+	/**
+	 * Este parâmetro, que descende da tabela
+	 Produto, relaciona muitos compradores a muitos produtos
+	 */
 	//alterado
 	@ManyToMany (mappedBy = "usuariosCompradores")
 	private List<Produto> produtosComprados;

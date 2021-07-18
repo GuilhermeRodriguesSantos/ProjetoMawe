@@ -16,6 +16,12 @@ public class UserDetailsServiceImplements implements UserDetailsService{
 	
 private @Autowired UsuarioRepository repositoryUsuario;
 	
+	/**
+	 * Nesta exceção, é trazida da classe Usuario, usada como parâmetro usuarioExistente,
+	 um email. Se este usuário existir, é retornado o email; caso o contrário, é informado
+	 que o email não existe
+	 * 
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		

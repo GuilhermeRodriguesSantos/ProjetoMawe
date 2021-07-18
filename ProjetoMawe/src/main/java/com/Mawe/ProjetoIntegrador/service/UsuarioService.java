@@ -21,15 +21,32 @@ import com.Mawe.ProjetoIntegrador.repository.UsuarioRepository;
 @Service
 public class UsuarioService {
 
+	/**
+	 * Traz atributos da classe UsuarioRepository
+	 */
 	@Autowired
 	private UsuarioRepository repository;
 	
+	/**
+	 * Traz atributos da classe CategoriaRepository
+	 */
 	@Autowired
 	private CategoriaRepository repositoryCategoria;
 
+	/**
+	 * Traz atributos da classe ProdutoRepository
+	 */
 	@Autowired
 	private ProdutoRepository repositoryProduto;
 
+	/**
+	 * Neste método, se um Usuario for existente, o retorno será vazio. 
+	 Caso o contrário uma senha é codificada, criptografada e salva como um novo usuário
+	 * 
+	 * @nomeobjeto CadastrarUsuario()
+	 * @param novoUuario
+	 * @return
+	 */
 	public Optional<Object> CadastrarUsuario(Usuario novoUuario) {
 		return repository.findByEmail(novoUuario.getEmail()).map(UsuarioExistente -> {
 			return Optional.empty();
@@ -40,7 +57,15 @@ public class UsuarioService {
 			return Optional.ofNullable(repository.save(novoUuario));
 		});
 	}
-
+	
+	/**
+	 * Este método serve par alterar o usuario da classe UsuarioDTO
+	 * 
+	 * @nomeobjeto alterar()
+	 * @param id
+	 * @param novoUsuario
+	 * @return
+	 */
 	public Optional<Usuario> alterar(Long id, UsuarioDTO novoUsuario) {
 		return repository.findById(id).map(atualizarUsuario -> {
 			atualizarUsuario.setNome(novoUsuario.getNome());
@@ -50,7 +75,14 @@ public class UsuarioService {
 			return Optional.empty();
 		});
 	}
-
+	
+	/**
+	 * Este método é utilizado para logar um UsuarioLoginDTO
+	 * 
+	 * @nomeobjeto Logar()
+	 * @param dadosLogin
+	 * @return
+	 */
 	public Optional<?> Logar(UsuarioLoginDTO dadosLogin) {
 		return repository.findByEmail(dadosLogin.getEmail()).map(UsuarioExistente -> {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -80,6 +112,7 @@ public class UsuarioService {
 	 * Permite que apenas o usuário que possua o parametro EMPRESA possa
 	 * cadastrar um novoProduto
 	 *  
+	 * @nomeobjeto criarProduto()
 	 */
 	public Optional<Produto> criarProduto(Produto novoProduto, Long idUsuario, Categoria novaCategoria) {
 
