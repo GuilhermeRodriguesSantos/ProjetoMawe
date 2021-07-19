@@ -50,7 +50,10 @@ public class Categoria {
 	 */
 	@NotNull (message = "é necessário informar o valor de material biodegradavel")
 	private Double materialBiodegradavel;
-
+	
+	/**
+	 * Lista atributos de Produto
+	 */
 	@OneToMany(mappedBy = "categoria")
 	@JsonIgnoreProperties ({"categoria", "empresaCriadora"})
 	private List<Produto> produto;
