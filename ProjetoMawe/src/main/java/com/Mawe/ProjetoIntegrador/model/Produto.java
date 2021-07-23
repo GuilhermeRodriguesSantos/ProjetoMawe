@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
@@ -161,3 +162,4 @@ public class Produto {
 		this.usuariosCompradores = usuariosCompradores;
 	}
 }
+

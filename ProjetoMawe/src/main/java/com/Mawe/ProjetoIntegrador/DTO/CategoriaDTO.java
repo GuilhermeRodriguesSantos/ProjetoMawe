@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.DTO;
 
 import javax.validation.constraints.NotEmpty;
@@ -25,3 +26,4 @@ public class CategoriaDTO {
 	}
 
 }
+

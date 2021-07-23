@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
@@ -97,5 +98,3 @@ public class Categoria {
 	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
 		this.materialBiodegradavel = materialBiodegradavel;
 	}
-
-}

@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
