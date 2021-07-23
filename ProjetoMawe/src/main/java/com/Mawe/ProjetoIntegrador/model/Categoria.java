@@ -1,16 +1,20 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
 
 import javax.persistence.Entity;
-
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+
+import com.Mawe.ProjetoIntegrador.model.util.TipoCategoria;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Abstração e instanciação de objetos/recursos. Definindo os atributos da
@@ -24,25 +28,37 @@ import javax.validation.constraints.Size;
 @Table(name = "tb_categoria")
 public class Categoria {
 
-	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
-	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 5)
-	private String categoriaSustentavel;
+	/**
+	 * O que diferencia o usuário padrão de uma empresa
+	 * pensar no enumerated
+	 */
+	@Enumerated (EnumType.STRING)
+	@NotNull (message = "é necessário informar o segmento da empresa correta")
+	private TipoCategoria segmentoEmpresa;
 
-	private int categoriaRanking;
+	/**
+	 * Valor de material reciclado reutilizado calculado por cubo do produto.
+	 */
+	@NotNull (message = "é necessário informar o valor de material reutilizado")
+	private Double materialReutilizado;
 
-	@NotEmpty(message = "Não pode ser nulo!")
-	@Size(min = 5)
-	private String categoriaDoacao;
-
+	/**
+	 * Valor de materiais biodegradáveis calculado por cubo do produto.
+	 */
+	@NotNull (message = "é necessário informar o valor de material biodegradavel")
+	private Double materialBiodegradavel;
+	
+	/**
+	 * Lista atributos de Produto
+	 */
 	@OneToMany(mappedBy = "categoria")
+	@JsonIgnoreProperties ({"categoria", "empresaCriadora"})
 	private List<Produto> produto;
 
-	// Métodos Getters e Setters
 	public List<Produto> getProduto() {
 		return produto;
 	}
@@ -51,36 +67,34 @@ public class Categoria {
 		this.produto = produto;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getCategoriaSustentavel() {
-		return categoriaSustentavel;
+	public TipoCategoria getSegmentoEmpresa() {
+		return segmentoEmpresa;
 	}
 
-	public void setCategoriaSustentavel(String categoriaSustentavel) {
-		this.categoriaSustentavel = categoriaSustentavel;
+	public void setSegmentoEmpresa(TipoCategoria segmentoEmpresa) {
+		this.segmentoEmpresa = segmentoEmpresa;
 	}
 
-	public int getCategoriaRanking() {
-		return categoriaRanking;
+	public Double getMaterialReutilizado() {
+		return materialReutilizado;
 	}
 
-	public void setCategoriaRanking(int categoriaRanking) {
-		this.categoriaRanking = categoriaRanking;
+	public void setMaterialReutilizado(Double materialReutilizado) {
+		this.materialReutilizado = materialReutilizado;
 	}
 
-	public String getCategoriaDoacao() {
-		return categoriaDoacao;
+	public Double getMaterialBiodegradavel() {
+		return materialBiodegradavel;
 	}
 
-	public void setCategoriaDoacao(String categoriaDoacao) {
-		this.categoriaDoacao = categoriaDoacao;
+	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
+		this.materialBiodegradavel = materialBiodegradavel;
 	}
-
-}
