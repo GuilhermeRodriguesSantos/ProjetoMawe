@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
@@ -32,32 +33,56 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	/**
+	 * Atribui nome do produto que será adicionado na lista
+	 */
 	@NotNull(message = "O nome não pode ser nulo")
 	@NotBlank(message = "O nome prescisa conter caracteres")
 	private String nome;
 
-	@NotNull(message = "O preço é obrigatório seu mané")
+	/**
+	 * Atribui valor de preço a algum produto adicionado
+	 */
+	@NotNull(message = "Acrescentar o preço é obrigatório")
 	private Float preco;
 
 	@NotNull(message = "O nome não pode ser nulo")
 	@NotBlank(message = "O nome prescisa conter caracteres")
 	private String descricao;
 
-	@NotNull(message = "O nome não pode ser nulo")
+	/**
+	 * Permite adicionar quantidade de produto
+	 */
+	@NotNull(message = "A quantidade de produtos não pode ser nula")
 	private Integer quantidade;
 	
+	/**
+	 * Atributo que adiciona url(caminho) da foto de algum produto
+	 */
 	@NotEmpty(message = "Esse campo precisa ter a url da foto")
 	private String url;
 	
+	/**
+	 * Este parâmetro, que descende da tabela
+	 Categoria, relaciona muito produtos para uma categoria 
+	 */
 	@ManyToOne
 	@JsonIgnoreProperties ({"produtosCadastrados", "produto", "usuariosCompradores"})
 	@NotNull (message = "É obrigatório informar a categoria do produto")
 	private Categoria categoria;
-
+	
+	/**
+	 * Este parâmetro, que descende da tabela
+	 Usuario, relaciona muito produtos para um usuario
+	 */
 	//alterado
 	@ManyToOne
 	private Usuario empresaCriadora;
 	
+	/**
+	 * Este parâmetro relaciona uma lista de usuariosCompradores
+	 a muitos produtos 
+	 */
 	//alterado
 	@ManyToMany
 	private List<Usuario> usuariosCompradores;
@@ -137,3 +162,4 @@ public class Produto {
 		this.usuariosCompradores = usuariosCompradores;
 	}
 }
+

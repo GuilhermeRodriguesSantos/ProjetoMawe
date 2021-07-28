@@ -10,15 +10,24 @@ import com.Mawe.ProjetoIntegrador.model.Usuario;
 
 public class UserDetailsImplements implements UserDetails{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
-	
+	/**
+	 * Este atributo email é usado para a autorização de segurança
+	 */
 	private String email;
+	/**
+	 * Este atributo senha é usado para a autorização de segurança
+	 */
 	private String senha;
+	/**
+	 * Traz atributos e metodos da classe GrantedAuthority
+	 * 
+	 * @param autorizações
+	 */
 	private List<GrantedAuthority> autorizacoes;
+
 
 	public UserDetailsImplements(Usuario usuario) {
 		super();
@@ -26,11 +35,12 @@ public class UserDetailsImplements implements UserDetails{
 		this.senha = usuario.getSenha();
 	}
 
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return autorizacoes;
 	}
-
+	
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub

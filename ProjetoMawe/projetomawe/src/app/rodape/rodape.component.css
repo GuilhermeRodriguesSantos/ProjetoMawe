@@ -1,0 +1,47 @@
+.cor{
+   background-image: url(../../assets/img/Rodapé-atualizado.png);
+   text-align: center;
+   width: 1377px;
+   height: 260px;
+}
+
+.fab{
+    font-size: 45px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+li {
+    list-style: none;
+    padding: 20px;
+}
+
+.texto1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.texto2{
+   margin-left: 26px;
+
+}
+
+.fa-linkedin:hover {
+    color: #0e76a8;
+
+
+}
+
+.fa-facebook-square:hover {
+    color: #3b5998;
+
+}
+
+.fa-instagram:hover {
+    color: #DD2A7B ;
+
+}
+

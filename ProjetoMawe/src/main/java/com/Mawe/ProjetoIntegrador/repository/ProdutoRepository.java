@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.repository;
 
 import java.util.List;
@@ -49,4 +50,3 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	 *         do atributo preco
 	 */
 	List<Produto> findAllByPrecoContaining (Double preco);
-}

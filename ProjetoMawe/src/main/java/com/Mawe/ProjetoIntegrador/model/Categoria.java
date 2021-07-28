@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.model;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class Categoria {
 	 * pensar no enumerated
 	 */
 	@Enumerated (EnumType.STRING)
-	@NotNull (message = "é necessário informar o segmento da empresa")
+	@NotNull (message = "é necessário informar o segmento da empresa correta")
 	private TipoCategoria segmentoEmpresa;
 
 	/**
@@ -50,7 +51,10 @@ public class Categoria {
 	 */
 	@NotNull (message = "é necessário informar o valor de material biodegradavel")
 	private Double materialBiodegradavel;
-
+	
+	/**
+	 * Lista atributos de Produto
+	 */
 	@OneToMany(mappedBy = "categoria")
 	@JsonIgnoreProperties ({"categoria", "empresaCriadora"})
 	private List<Produto> produto;
@@ -94,5 +98,3 @@ public class Categoria {
 	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
 		this.materialBiodegradavel = materialBiodegradavel;
 	}
-
-}

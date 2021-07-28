@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.controller;
 
 import java.util.List;
@@ -140,7 +141,7 @@ public class UsuarioController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	/**
-	 * Este metodo cria um produto quando o Usuário é Empresa (tipoUsuario)
+	 * Este metodo cria um produto quando o Usuário é Empresa. (tipoUsuario)
 	 * @param id ou tipoUsuario
 	 * @param novoProduto
 	 * @return
