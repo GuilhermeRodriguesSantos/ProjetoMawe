@@ -18,6 +18,7 @@ Como uma maneira de reagir ao descarte de materiais que se acumulam na atmosfera
 * [Maven](https://maven.apache.org/) - Gerente de Dependência
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Biblioteca utiliza para facilitar a escrita HTML/CSS/JS
 * [Angular](https://angular.io/cli) - Estruturar a aplicação
+* [Node.Js] (https://nodejs.org/pt-br/docs/)
 * [Java](https://docs.oracle.com/javase/7/docs/api/)
 * [HTML](https://devdocs.io/html/)
 * [CSS](https://devdocs.io/css/) 
@@ -38,11 +39,9 @@ Projeto desenvolvido em grupo, durante o processo de criação aprendemos e apli
 Utilizado principalmente live codes e trello para manter a comunicação efetiva.
 Foi criado uma documentação temporária e após finalização do projeto, resumida para este Readme.
 
- ![Allura - Social Media](https://user-images.githubusercontent.com/85169595/124041081-91f95080-d9dc-11eb-8c62-8260a653ac94.png)
+## 📦 Notas
 
-## 📦 Desenvolvimento
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+Para reimplementar o projeto Angular, após baixado, instale a pasta node_modules, informando no Terminal de escolha: npm install.
 
 ## 🎁 Expressões de gratidão
 
