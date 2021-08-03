@@ -98,3 +98,4 @@ public class Categoria {
 	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
 		this.materialBiodegradavel = materialBiodegradavel;
 	}
+}

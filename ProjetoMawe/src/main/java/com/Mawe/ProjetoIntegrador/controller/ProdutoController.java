@@ -8,10 +8,13 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,10 +24,16 @@ import com.Mawe.ProjetoIntegrador.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produto")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository repository;
+	
+	@PostMapping("/cadastrar")
+	public ResponseEntity<Produto> cadastrar (@Valid @RequestBody Produto novoProduto){
+		return ResponseEntity.status(201).body(repository.save(novoProduto));
+	}
 	
 	/**
 	 * Este metodo pesquisa todos os parâmetros da classe de Produto
@@ -94,15 +103,14 @@ public class ProdutoController {
 	*/
 	
 	/**
-	 * Este metodo é responsável por alterar o id do produto
+	 * Este metodo é responsável por alterar o produto
 	 * 
 	 * @nomeobjeto Alterar()
-	 * @param Valida e reconhece o parametro id alterar
-	 * @return Para aplicação: Retorna o status e as informações no corpo da requisição e salva a alteração 
-	 feita no id
-	 */
-	@PutMapping("/alterar/{id}")
-	public ResponseEntity<Produto> Alterar(@Valid @PathVariable Produto alterar) {
+	 * @param Entidade Produto alterada
+	 * @return Retorna o a Entidade produto alterada.
+	 */	
+	@PutMapping("/alterar")
+	public ResponseEntity<Produto> Alterar(@Valid @RequestBody Produto alterar) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(alterar));
 	}
 	

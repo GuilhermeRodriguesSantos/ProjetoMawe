@@ -13,8 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
@@ -68,7 +66,7 @@ public class Produto {
 	 */
 	@ManyToOne
 	@JsonIgnoreProperties ({"produtosCadastrados", "produto", "usuariosCompradores"})
-	@NotNull (message = "É obrigatório informar a categoria do produto")
+	//@NotNull (message = "É obrigatório informar a categoria do produto")
 	private Categoria categoria;
 	
 	/**
