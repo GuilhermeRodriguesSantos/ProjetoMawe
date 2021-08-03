@@ -31,14 +31,11 @@ public class UsuarioService {
 	/**
 	 * Traz atributos da classe CategoriaRepository
 	 */
-	@Autowired
-	private CategoriaRepository repositoryCategoria;
 
 	/**
 	 * Traz atributos da classe ProdutoRepository
 	 */
-	@Autowired
-	private ProdutoRepository repositoryProduto;
+	
 
 	/**
 	 * Neste método, se um Usuario for existente, o retorno será vazio. 
@@ -109,22 +106,5 @@ public class UsuarioService {
 		});
 	}
 
-	/**
-	 * Permite que apenas o usuário que possua o parametro EMPRESA possa
-	 * cadastrar um novoProduto
-	 *  
-	 * @nomeobjeto criarProduto()
-	 */
-	public Optional<Produto> criarProduto(Produto novoProduto, Long idUsuario, Categoria novaCategoria) {
-
-		Optional<Usuario> usuarioExistente = repository.findById(idUsuario);
-		if (usuarioExistente.isPresent() && usuarioExistente.get().getTipoUsuario() == TipoUsuario.EMPRESA) {
-			Categoria categoriaCriada = repositoryCategoria.save(novaCategoria);
-			novoProduto.setEmpresaCriadora(usuarioExistente.get());
-			novoProduto.setCategoria(categoriaCriada);
-			return Optional.ofNullable(repositoryProduto.save(novoProduto));
-		} else {
-			return Optional.empty();
-		}
-	}
+	
 }

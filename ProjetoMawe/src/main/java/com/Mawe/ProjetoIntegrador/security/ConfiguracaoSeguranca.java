@@ -51,7 +51,7 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
  	protected void configure(HttpSecurity http) throws Exception {
  		http.authorizeRequests()
  		.antMatchers(HttpMethod.POST , "/ProjetoMawe/Usuario/Cadastrar").permitAll()
- 		.antMatchers(HttpMethod.PUT, "/ProjetoMawe/Usuario/Logar").permitAll()
+ 		.antMatchers(HttpMethod.POST, "/ProjetoMawe/Usuario/Logar").permitAll()
  		.anyRequest().authenticated()
  		.and().httpBasic()
  		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
