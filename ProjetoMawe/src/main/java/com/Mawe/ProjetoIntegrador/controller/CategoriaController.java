@@ -67,7 +67,7 @@ public class CategoriaController {
 	 * @return para a aplicação: status e info no corpo da requisição
 	 */
 	@GetMapping("/{id}/buscarpeloid") 
-	public ResponseEntity<Categoria> buscarpeloid(@PathVariable Long id){
+	public ResponseEntity<Categoria> buscarPeloId(@PathVariable Long id){
 		return categoriaRepository.findById(id).map(achou-> ResponseEntity.ok(achou)).orElse(ResponseEntity.notFound().build());
 	}
 	
