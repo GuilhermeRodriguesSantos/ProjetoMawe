@@ -1,0 +1,53 @@
+<div class="container-flex">
+    <div class="row">
+        <div class="col-md-6 img">
+        </div>
+        
+        <div class="col-md-6">
+            <div class="alinhar">
+            <div>
+                <h1>Cadastrar</h1>
+            </div>
+
+            <div>
+                <input [(ngModel)] = 'usuario.nome' class="mt-3 mb-3 a" type="text" name="nome" id="nome" placeholder="Digite se nome:">
+            </div>
+
+            
+            <div>
+                <input [(ngModel)] = 'usuario.email' class="mb-3 a"  type="email" name="email" id="email" placeholder="Digite o seu email:">
+            </div>
+
+            <div>
+                <input [(ngModel)] = 'usuario.endereco' class="mb-3 a" type="text" name="endereco" id="endereco" placeholder="Digite seu endereço:">
+            </div>
+
+            <div>
+                <input (input)= 'confirmSenha($event)' class="mb-3 a" type="password" name="senha" id="senha" placeholder="Digite sua senha:">
+            </div>
+
+            
+            <div>
+                <input [(ngModel)] = 'usuario.senha' class="mb-3 a"  type="password" name="senhac" id="senhac" placeholder="Confirme sua senha:">
+            </div>
+
+            <div>
+                <label for="Usuario">Tipo de Usuario:</label>
+               <select class="form-control aa" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
+                    <option>Selecione seu tipo de Usuario</option>
+                    <option value="EMPRESA">EMPRESA</option>
+                    <option value="USUARIO">USUARIO</option>
+                </select>
+            </div>
+
+
+            <div>
+                <ul class="d-flex justify-content-center">
+                    <li><button type="button" class="btn btn-outline-success mb-4 tm mr " (click)='cadastrar()'>Cadastrar</button></li>
+                    <li><button type="button" class="btn btn-outline-danger mb-4  tm " routerLink='/Logar'>  Logar</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

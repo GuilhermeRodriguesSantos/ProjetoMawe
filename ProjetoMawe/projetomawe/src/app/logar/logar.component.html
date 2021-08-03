@@ -1,0 +1,31 @@
+<div class="container-flex">
+    <div class="row">
+        <div class="col-md-6 img">
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="espaca">
+                <div> 
+                    <h1>Logar:</h1>
+                </div>
+
+                <div>
+                   <input [(ngModel)]='usuarioLogin.email' type="email" id="email" placeholder="Digite seu E-mail:" class="mt-4 mb-4 a">
+                </div>
+
+                <div>
+                    <input [(ngModel)] = 'usuarioLogin.senha' type="password" id="senha" placeholder="Digite sua senha:" class="mb-4 a">
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-outline-success mb-4 tm" (click)='logar()'>Logar</button>
+                </div>
+
+                <div>
+                    <p>Se caso não tiver uma conta | <a routerLink="/Cadastrar">Cadastre-se</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+.img{
+    background-image: url(../../assets/img/sabonete.jpg);
+    
+    height: 639px;
+  
+}
+.aa{
+    width: 290px;
+    margin-left: 200px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.alinhar{
+    text-align: center;
+    margin-top: 25%;
+}
+
+.a{
+    width:  300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    outline: none;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.tm{
+    width: 130px;
+}
+
+.mr{
+    margin-right: 10px;
+}

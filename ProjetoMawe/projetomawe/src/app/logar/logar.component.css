@@ -1,0 +1,30 @@
+.cor{
+    background-color: green;
+}
+
+.espaca{
+    text-align: center;
+    margin-top: 30%;
+}
+
+.img{
+    background-image: url(../../assets/img/lavalouças.png);
+    
+    height: 639px;
+
+    
+}
+
+.a{
+    width:  300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    outline: none;
+
+}
+
+.tm{
+    width: 140px;
+}

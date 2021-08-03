@@ -3,12 +3,19 @@ import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LogarComponent } from './logar/logar.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'Home', pathMatch: 'full'},
+  {path:'', redirectTo: 'Logar', pathMatch: 'full'},
   {path:"home", component: HomeComponent },
   {path:"contato", component:ContatoComponent },
-  {path:"sobre-nos", component:SobreNosComponent }
+  {path:"sobre-nos", component:SobreNosComponent },
+  {path: "Logar" , component: LogarComponent},
+  {path: "Cadastrar", component: CadastrarComponent},
+  {path: "Inicio", component: InicioComponent}
+
 
 ];
 
