@@ -1,3 +1,4 @@
+
 package com.Mawe.ProjetoIntegrador.controller;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,79 +22,75 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Mawe.ProjetoIntegrador.model.Produto;
 import com.Mawe.ProjetoIntegrador.repository.ProdutoRepository;
 
-/**
- * Manipular requisições de fora da API (através do mét HTTP)
- * 
- * Última atualização: julho de 2021
- * 
- * @author desenvolvedores Mawé
- */
+
+
 @RestController
 @RequestMapping("/produto")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
-
-	/**
-	 * Fazer vínculo com a ProdutoRepository
-	 * 
-	 * @Autowired anotação para injeção de dependência
-	 * @param repository
-	 */
+	
 	@Autowired
 	private ProdutoRepository repository;
-
+	
+	
+	@PostMapping("/cadastrar")
+	public ResponseEntity<Produto> cadastrar (@Valid @RequestBody Produto novoProduto){
+		return ResponseEntity.status(201).body(repository.save(novoProduto));
+	}
+	
 	/**
-	 * Através do método HTTP, localiza todos os produtos
+	 * Este metodo pesquisa todos os parâmetros da classe de Produto
 	 * 
-	 * @NomeMétodo BuscarProduto
-	 * @return para a aplicação: status e info no corpo da requisição
+	 * @nomeobjeto BuscarProduto()
+	 * @return Para a aplicação: Retorna o status e as informações no corpo da requisição
 	 */
 	@GetMapping("/buscar")
 	public ResponseEntity<List<Produto>> BuscarProduto() {
 		return ResponseEntity.status(200).body(repository.findAll());
 	}
-
+	
 	/**
-	 * Através do método HTTP, busca todos parametros que contém um caracter
-	 * solicitado
+	 * Este metodo também pesquisa parâmetros da classe de Produto, conforme o nome informado 
 	 * 
-	 * @param nome
-	 * @return para a aplicação: status e info no corpo da requisição
+	 * @nomeobjeto BuscarNome()
+	 * @param Request: String nome
+	 * @return Para a aplicação: Retorna o status e as informações no corpo da requisição, conforme o nome indicado
 	 */
 	@GetMapping("/buscar/nome")
 	public ResponseEntity<List<Produto>> BuscarNome(@RequestParam String nome) {
 		return ResponseEntity.status(200).body(repository.findAllByNomeContaining(nome));
 	}
-
+	
 	/**
-	 * Através do método HTTP, busca todos parametros que contém um caracter
-	 * solicitado
+	 * Este metodo também pesquisa parâmetros da classe de Produto, conforme a descrição informada
 	 * 
-	 * @param descricao
-	 * @return para a aplicação: status e info no corpo da requisição
+	 * @nomeobjeto BuscarDescricao()
+	 * @param Request: String descricao
+	 * @return Para a aplicação: Retorna o status e as informações no corpo da requisição, conforme alguma descrição indicada
 	 */
 	@GetMapping("/buscar/descricao")
 	public ResponseEntity<List<Produto>> BuscarDescricao(@RequestParam String descricao) {
 		return ResponseEntity.status(200).body(repository.findAllByDescricaoContaining(descricao));
 	}
-
+	
 	/**
-	 * Através do método HTTP, busca todos parametros que contém um caracter
-	 * solicitado
+	 * Este metodo também pesquisa parâmetros da classe de Produto, conforme o preço informado
 	 * 
-	 * @param preco
-	 * @return para a aplicação: status e info no corpo da requisição
+	 * @nomeobjeto BuscarPreco()
+	 * @param Request: Double preco
+	 * @return Para a aplicação: Retorna o status e as informações no corpo da requisição, conforme o preço indicado
 	 */
 	@GetMapping("/buscar/preco")
 	public ResponseEntity<List<Produto>> BuscarPreco(@RequestParam Double preco) {
 		return ResponseEntity.status(200).body(repository.findAllByPrecoContaining(preco));
 	}
-
+	
 	/**
-	 * Retorna do banco de dados a linha especificada pelo @id, informado no método
-	 * HTTP
+	 * Este metodo também pesquisa parâmetros da classe de Produto, conforme o id informado
 	 * 
-	 * @param id, atributo da classe Produto
-	 * @return para a aplicação: status e info no corpo da requisição
+	 * @nomeobjeto BuscarId()
+	 * @param Request: long id
+	 * @return Para a aplicação: Retorna o status e as informações no corpo da requisição, conforme o id indicado
 	 */
 	@GetMapping("/buscar/{id}")
 	public ResponseEntity<Produto> BuscarId(@PathVariable long id) {
@@ -100,38 +98,34 @@ public class ProdutoController {
 	}
 
 	/**
-	 * Adicionar parametros aos atributos da classe Produto
-	 * 
-	 * @param adicionar
-	 * @return Através do método HTTP
-	 */
+	 * Descontinuado, devido criação de regra de negócio 
 	@PostMapping("/adicionar")
 	public ResponseEntity<Produto> Adicionar(@Valid @RequestBody Produto adicionar) {
 		return ResponseEntity.status(201).body(repository.save(adicionar));
 	}
-
+	*/
+	
 	/**
-	 * Alteração de parametros, dos atributos da tabela Produto
+	 * Este metodo é responsável por alterar o produto
 	 * 
-	 * @NomeMetodo Alterar
-	 * @param alterar, Objeto instânciado para transportar informações
-	 * @return utiliza em conjuto com uma aplicação alteracao: retorna com infs no
-	 *         corpo da requisição save: salva as infos retornadas no corpo da
-	 *         requisição
-	 */
-	@PutMapping("/alterar/{id}")
-	public ResponseEntity<Produto> Alterar(@Valid @PathVariable Produto alterar) {
+	 * @nomeobjeto Alterar()
+	 * @param Entidade Produto alterada
+	 * @return Retorna o a Entidade produto alterada.
+	 */	
+	@PutMapping("/alterar")
+	public ResponseEntity<Produto> Alterar(@Valid @RequestBody Produto alterar) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(alterar));
 	}
-
+	
 	/**
-	 * Deleta o conjunto de informações atreladas ao id (linha da tabela, no banco de dados)
+	 * Este metodo é responsável por deletar o id do produto
 	 * 
-	 * @NomeMétodo Deletar
-	 * @param id
+	 * @nomeobjeto Deletar() 
+	 * @param Deleta o parametro id 
 	 */
 	@DeleteMapping("/delete/{id}")
 	public void Deletar(@PathVariable long id) {
 		repository.deleteById(id);
 	}
 }
+

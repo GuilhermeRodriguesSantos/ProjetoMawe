@@ -1,13 +1,14 @@
+
 package com.Mawe.ProjetoIntegrador.DTO;
 
 import javax.validation.constraints.NotEmpty;
 
 public class CategoriaDTO {
-
+	
 	private int categoriaRanking;
 	@NotEmpty(message = "Não pode ser nulo!")
 	private String categoriaDoacao;
-
+	
 	public int getCategoriaRanking() {
 		return categoriaRanking;
 	}
@@ -25,3 +26,4 @@ public class CategoriaDTO {
 	}
 
 }
+
