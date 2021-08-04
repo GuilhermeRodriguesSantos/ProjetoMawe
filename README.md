@@ -13,12 +13,16 @@ Criamos conexões para demonstrar que há outras maneiras de criar e consumir, s
 Como uma maneira de reagir ao descarte de materiais que se acumulam na atmosfera. A ideia do e-commerce, é incentivar empresas a criar soluções e o meio para apresentar aos usuários; classificamos os produtos que tem o maior índice sustentável, e elevamos empresas ecologicamente corretas. Dessa forma, a qualidade do produto aumenta e o mundo muda junto.
 
 ## 🛠️ Construído com
+<p>Frameworks:</p>
 
 * [SpringBoot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) - O framework usado para gerar a API REST 
 * [Maven](https://maven.apache.org/) - Gerente de Dependência
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Biblioteca utiliza para facilitar a escrita HTML/CSS/JS
 * [Angular](https://angular.io/cli) - Estruturar a aplicação
 * [Node.Js] (https://nodejs.org/pt-br/docs/)
+
+<p>Linguagens:</p>
+
 * [Java](https://docs.oracle.com/javase/7/docs/api/)
 * [HTML](https://devdocs.io/html/)
 * [CSS](https://devdocs.io/css/) 
@@ -45,7 +49,8 @@ Para reimplementar o projeto Angular, após baixado, instale a pasta node_module
 
 ## 🎁 Expressões de gratidão
 
-* Conte a outras pessoas sobre este projeto 📢
-* Convide alguém da equipe para uma cerveja 🍺 
-* Obrigado publicamente 🤓.
-* etc.
+* Liza 📢
+* Luis
+* Boaz
+* Lucas 🤓
+* **Vitor Ribeiro** - [ZzRotivZz](https://github.com/ZzRotivZz) 🍺 
