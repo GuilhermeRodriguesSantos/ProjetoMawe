@@ -37,20 +37,17 @@ public class Categoria {
 	 * pensar no enumerated
 	 */
 	@Enumerated (EnumType.STRING)
-	@NotNull (message = "é necessário informar o segmento da empresa correta")
 	private TipoCategoria segmentoEmpresa;
 
 	/**
-	 * Valor de material reciclado reutilizado calculado por cubo do produto.
+	 * Tipos de material reciclado que são reutilizados nos produtos.
 	 */
-	@NotNull (message = "é necessário informar o valor de material reutilizado")
-	private Double materialReutilizado;
+	private String materialReutilizado;
 
 	/**
-	 * Valor de materiais biodegradáveis calculado por cubo do produto.
+	 * Quantidade em porcentagem, dos materiais utilizados biodegradáveis e reutilizado.
 	 */
-	@NotNull (message = "é necessário informar o valor de material biodegradavel")
-	private Double materialBiodegradavel;
+	private String materialBiodegradavel;
 	
 	/**
 	 * Lista atributos de Produto
@@ -83,19 +80,19 @@ public class Categoria {
 		this.segmentoEmpresa = segmentoEmpresa;
 	}
 
-	public Double getMaterialReutilizado() {
+	public String getMaterialReutilizado() {
 		return materialReutilizado;
 	}
 
-	public void setMaterialReutilizado(Double materialReutilizado) {
+	public void setMaterialReutilizado(String materialReutilizado) {
 		this.materialReutilizado = materialReutilizado;
 	}
 
-	public Double getMaterialBiodegradavel() {
+	public String getMaterialBiodegradavel() {
 		return materialBiodegradavel;
 	}
 
-	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
+	public void setMaterialBiodegradavel(String materialBiodegradavel) {
 		this.materialBiodegradavel = materialBiodegradavel;
 	}
 }
