@@ -2,7 +2,6 @@
     background-image: url(../../assets/img/Rodapé-atualizado.png);
     text-align: center;
     width: 100%;
-    height: 260px;
 }
 
 .fab {
@@ -33,6 +32,12 @@ li {
 
 .fa-facebook-square:hover {
     color: #3b5998;
+}
+
+
+.texto{
+
+text-align: justify;
 }
 
 .fa-instagram:hover {
