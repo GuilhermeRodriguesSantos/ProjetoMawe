@@ -7,6 +7,8 @@ import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ProdutoComponent } from './produto/produto.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path: "Logar" , component: LogarComponent},
   {path: "Cadastrar", component: CadastrarComponent},
   {path: "Inicio", component: InicioComponent},
-  {path: 'categoria', component: CategoriaComponent}
+  {path: 'categoria', component: CategoriaComponent},
+  {path: "Produto", component: ProdutoComponent}
 
 
 ];
