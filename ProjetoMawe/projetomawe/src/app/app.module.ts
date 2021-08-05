@@ -29,7 +29,7 @@ import { ProdutoComponent } from './produto/produto.component';
     LogarComponent,
     CadastrarComponent,
     InicioComponent,
-    CategoriaComponent
+    CategoriaComponent,
     ProdutoComponent
   ],
   imports: [
