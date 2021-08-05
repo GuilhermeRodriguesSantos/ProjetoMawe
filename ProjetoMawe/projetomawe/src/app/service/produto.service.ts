@@ -13,6 +13,8 @@ export class ProdutoService {
   constructor(
     private http:HttpClient
   ) {}
+
+  
     token = {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
@@ -25,9 +27,7 @@ export class ProdutoService {
     getAllProduto(): Observable<produto[]>{
       return this.http.get<produto[]>('http://localhost:8080/produto/buscar', this.token)
     }
-
-
-    }
+}
     
 
 

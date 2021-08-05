@@ -4,27 +4,27 @@
 
 
             <h1 class="texto1 text-center">Produto</h1>
-            <h5 class="texto2 text-center">Veja aqui todos os produtos e cadastre um novo!</h5>
+            <h5 class="texto2 text-center mb-3 mt-3">Veja aqui todos os produtos e cadastre um novo!</h5>
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input [(ngModel)]='Produto.nome' type="text" value="nome" class="form-control mb-4" id="nome"
+                        <input [(ngModel)]='Produto.nome' type="text" value="nome" class="form-control mb-3" id="nome"
                             placeholder="Digite o nome do produto:">
                     </div>
 
-                    <div class="form-group">
-                        <input [(ngModel)]='Produto.preco' type="text" value="Preço" class="form-control"
-                            id="preço" placeholder="Digite a Descrição preço do produto:">
+                    <div class="form-group mb-3">
+                        <input [(ngModel)]='Produto.preco' type="number" value="Preço" class="form-control"
+                            id="preço" placeholder="Digite o preço do produto:">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <input [(ngModel)]='Produto.descricao' type="text" value="descricao" class="form-control"
-                            id="descricao" placeholder="Digite a Descrição preço do produto:">
+                            id="descricao" placeholder="Digite a Descrição do produto:">
                     </div>
-                    <div class="form-group">
-                        <input [(ngModel)]='Produto.quantidade' type="text" value="quantidade" class="form-control"
-                            id="quantidade" placeholder="Digite a Descrição quantidade do produto:">
+                    <div class="form-group mb-3">
+                        <input [(ngModel)]='Produto.quantidade' type="number" value="quantidade" class="form-control"
+                            id="quantidade" placeholder="Digite a quantidade do produto:">
 
                     </div>
                     <div class="form-group">
@@ -55,8 +55,8 @@
                     <tr>
                         <th scope="col">Id:</th>
                         <th scope="col">Nome:</th>
-                        <th scope="col">Descrição:</th>
                         <th scope="col">Preço:</th>
+                        <th scope="col">Descrição:</th>
                         <th scope="col">Quantidade:</th>
                         <th scope="col">url:</th>
                         <th scope="col" class="text-right">Modificações:</th>
@@ -72,7 +72,7 @@
                         <td> {{Produto.url}} </td>
                         <td class="d-flex justify-contente-end">
                             <button class="btn btn-info lado"> Editar </button>
-                            <button class="btn btn-danger"> Excluir</button>
+                            <button class="btn btn-danger espaco"> Excluir</button>
                         </td>
                     </tr>
                 </tbody>
