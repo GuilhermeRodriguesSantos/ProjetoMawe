@@ -28,3 +28,24 @@
 .tm{
     width: 140px;
 }
+
+.img{
+    background-image: url(../../assets/img/eucaliptoArcoIris.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;;
+
+}
+
+.fundo2-div{
+    background-color: rgb(172, 164, 164);
+    width: 380px;
+    height: 500px;
+    border-radius: 20px;
+   
+}
+
+.menu:hover{
+    background-color: rgb(73, 192, 62);
+}
