@@ -37,7 +37,10 @@ export class LogarComponent implements OnInit {
       console.log(environment.token)
       console.log(environment.endereco)
       
-      this.router.navigate(['/Produto'])
+
+      this.router.navigate(['/categoria'])
+
+      
     }, erro => {
       if(erro.status == 500  || erro.status == 400){
         alert('Usuario ou senha incoretos, tente novamente!')

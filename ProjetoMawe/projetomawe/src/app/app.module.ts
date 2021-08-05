@@ -13,7 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
+
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { ProdutoComponent } from './produto/produto.component';
     LogarComponent,
     CadastrarComponent,
     InicioComponent,
+    CategoriaComponent
     ProdutoComponent
   ],
   imports: [
