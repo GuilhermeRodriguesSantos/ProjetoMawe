@@ -1,8 +1,10 @@
 .img{
-    background-image: url(../../assets/img/sabonete.jpg);
-    
-    height: 639px;
-  
+    background-image: url(../../assets/img/eucaliptoArcoIris.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;;
+
 }
 .aa{
     width: 290px;
@@ -36,4 +38,24 @@ ul{
 
 .mr{
     margin-right: 10px;
+}
+
+.margin1{
+    margin-left: 30px;
+}
+
+.fundo2-div{
+    background-color: rgb(172, 164, 164);
+    width: 380px;
+    height: 500px;
+    border-radius: 20px;
+   
+}
+
+.menu:hover{
+    background-color: rgb(73, 192, 62);
+}
+
+.menu2:hover{
+    background-color: rgb(46, 174, 184);
 }
