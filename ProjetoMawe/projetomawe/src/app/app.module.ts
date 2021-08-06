@@ -15,10 +15,15 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
-<<<<<<< HEAD
-=======
+import { CasaComponent } from './casa/casa.component';
+import { ModaComponent } from './moda/moda.component';
+import { ArteComponent } from './arte/arte.component';
+import { InfantilComponent } from './infantil/infantil.component';
+import { PetComponent } from './pet/pet.component';
+import { PapelariaComponent } from './papelaria/papelaria.component';
+import { SaudeComponent } from './saude/saude.component';
+import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
 
->>>>>>> 2092d19198e686f666172bab4ea59ebb9df178b0
 
 
 @NgModule({
@@ -33,7 +38,15 @@ import { ProdutoComponent } from './produto/produto.component';
     CadastrarComponent,
     InicioComponent,
     CategoriaComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    CasaComponent,
+    ModaComponent,
+    ArteComponent,
+    InfantilComponent,
+    PetComponent,
+    PapelariaComponent,
+    SaudeComponent,
+    CosmeticosComponent
   ],
   imports: [
     BrowserModule,
