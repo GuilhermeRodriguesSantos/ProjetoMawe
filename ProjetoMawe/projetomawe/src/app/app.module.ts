@@ -15,7 +15,10 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2092d19198e686f666172bab4ea59ebb9df178b0
 
 
 @NgModule({
