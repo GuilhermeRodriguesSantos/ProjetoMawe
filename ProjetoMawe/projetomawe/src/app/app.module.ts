@@ -14,6 +14,7 @@ import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
     LogarComponent,
     CadastrarComponent,
     InicioComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    ProdutoComponent
   ],
   imports: [
     BrowserModule,
