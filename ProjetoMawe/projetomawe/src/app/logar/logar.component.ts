@@ -20,6 +20,7 @@ export class LogarComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    environment.menu = false
   }
 
 
