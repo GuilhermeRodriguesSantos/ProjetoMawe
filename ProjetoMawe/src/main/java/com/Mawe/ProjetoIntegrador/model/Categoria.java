@@ -37,19 +37,19 @@ public class Categoria {
 	 * pensar no enumerated
 	 */
 	@Enumerated (EnumType.STRING)
-	@NotNull (message = "é necessário informar o segmento da empresa correta")
+	//@NotNull (message = "é necessário informar o segmento da empresa correta")
 	private TipoCategoria segmentoEmpresa;
 
 	/**
 	 * Valor de material reciclado reutilizado calculado por cubo do produto.
 	 */
-	@NotNull (message = "é necessário informar o valor de material reutilizado")
+	//@NotNull (message = "é necessário informar o valor de material reutilizado")
 	private Double materialReutilizado;
 
 	/**
 	 * Valor de materiais biodegradáveis calculado por cubo do produto.
 	 */
-	@NotNull (message = "é necessário informar o valor de material biodegradavel")
+	//@NotNull (message = "é necessário informar o valor de material biodegradavel")
 	private Double materialBiodegradavel;
 	
 	/**
