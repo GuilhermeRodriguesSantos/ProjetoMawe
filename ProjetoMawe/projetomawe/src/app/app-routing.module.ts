@@ -8,10 +8,18 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { CasaComponent } from './casa/casa.component';
+import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
+import { ModaComponent } from './moda/moda.component';
+import { ArteComponent } from './arte/arte.component';
+import { InfantilComponent } from './infantil/infantil.component';
+import { PetComponent } from './pet/pet.component';
+import { PapelariaComponent } from './papelaria/papelaria.component';
+import { SaudeComponent } from './saude/saude.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo: 'Logar', pathMatch: 'full'},
+  {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path:"home", component: HomeComponent },
   {path:"contato", component:ContatoComponent },
   {path:"sobre-nos", component:SobreNosComponent },
@@ -19,7 +27,16 @@ const routes: Routes = [
   {path: "Cadastrar", component: CadastrarComponent},
   {path: "Inicio", component: InicioComponent},
   {path: 'categoria', component: CategoriaComponent},
-  {path: "Produto", component: ProdutoComponent}
+  {path: "Produto", component: ProdutoComponent},
+  {path: "casa", component: CasaComponent},
+  {path: "moda", component: ModaComponent},
+  {path: "arte", component: ArteComponent},
+  {path: "infantil", component: InfantilComponent},
+  {path: 'pet', component: PetComponent},
+  {path: 'papelaria', component: PapelariaComponent},
+  {path: "saude", component: SaudeComponent},
+  {path: "cosmeticos", component: CosmeticosComponent}
+  
 
 
 ];
