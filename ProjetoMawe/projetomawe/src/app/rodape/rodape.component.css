@@ -1,5 +1,7 @@
 .cor {
-    background-image: url(../../assets/img/Rodapé-atualizado.png);
+   /* background-image: url(../../assets/img/Rodapé-atualizado.png);*/
+ 
+   background-color: #2D5920;
     text-align: center;
     width: 100%;
 }
@@ -45,6 +47,7 @@ text-align: justify;
 }
 .fundo-div{
     background-color: white;
+    border-radius: 30px;
     width: 370px;
    
 }
@@ -52,3 +55,4 @@ text-align: justify;
 .ct{
     margin-right: 30px;
 }
+
