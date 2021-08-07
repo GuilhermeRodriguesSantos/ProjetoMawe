@@ -32,4 +32,12 @@ export class AuthService {
     return ok
   }
 
+  loginOff(){
+    let ok: boolean = false
+    if(environment.menu){
+      ok = true
+    }
+    return ok
+  }
+
 }
