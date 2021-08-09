@@ -16,6 +16,9 @@ import { InfantilComponent } from './infantil/infantil.component';
 import { PetComponent } from './pet/pet.component';
 import { PapelariaComponent } from './papelaria/papelaria.component';
 import { SaudeComponent } from './saude/saude.component';
+import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 
 const routes: Routes = [
@@ -35,7 +38,10 @@ const routes: Routes = [
   {path: 'pet', component: PetComponent},
   {path: 'papelaria', component: PapelariaComponent},
   {path: "saude", component: SaudeComponent},
-  {path: "cosmeticos", component: CosmeticosComponent}
+  {path: "cosmeticos", component: CosmeticosComponent},
+  {path: "Inicio-empresa", component:InicioEmpresaComponent},
+  {path: "Editar/:id", component: CategoriaEditComponent},
+  {path: "Deletar/:id", component: CategoriaDeleteComponent}
   
 
 

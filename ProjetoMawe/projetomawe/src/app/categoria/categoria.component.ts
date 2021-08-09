@@ -10,7 +10,7 @@ import { CategoriaService } from '../service/categoria.service';
   styleUrls: ['./categoria.component.css']
 })
 export class CategoriaComponent implements OnInit {
-
+  Segmento: string
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
 
@@ -40,6 +40,7 @@ export class CategoriaComponent implements OnInit {
     }
 
   cadastrar(){
+    this.categoria.segmentoEmpresa = this.Segmento
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria=resp
       alert('Categoria cadastrada com sucesso!')
@@ -47,6 +48,10 @@ export class CategoriaComponent implements OnInit {
       this.categoria= new Categoria()
       
     })
+  }
+
+  seguimento(event: any){
+    this.Segmento = event.target.value
   }
   
 // < Componente cadastrar 

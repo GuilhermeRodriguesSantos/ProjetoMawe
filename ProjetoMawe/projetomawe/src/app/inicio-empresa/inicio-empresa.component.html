@@ -1,0 +1,117 @@
+  
+<div class="container-fluid">
+
+    <div class="row bg-secondary d-flex align-items-center">
+        <div class="col-md-6">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 text-white">
+                <h1 class="texto">Seja bem vindo!</h1>
+                <h5 class="texto2"> Pronto para Cadastrar seus Produtos</h5>
+            </div>
+            </div>
+
+            <div class="row c-flex justify-content-center mt-3 mb-5">
+                <div class="col-md-6">
+
+                    <button class="btn btn-light bt" data-bs-toggle="modal" data-bs-target="#nova-postagem">  Novo Produto</button>
+                    <a class="btn  btn-outline-light" href="#postagens"> Ver Produtos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center">
+           
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5" id="postagens">
+    
+    <nav>
+        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+
+          <button class="nav-link active text-secondary tx" id="TodasasPostagens" data-bs-toggle="tab" data-bs-target="#nav-TodasasPostagens" type="button" role="tab" aria-controls="nav-TodasasPostagens" aria-selected="true">Todas os Produtos</button>
+
+          <button class="nav-link text-secondary tx" id="MinhasPostagens" data-bs-toggle="tab" data-bs-target="#nav-MinhasPostagens" type="button" role="tab" aria-controls="nav-MinhasPostagens" aria-selected="false">Meus Produtos</button>
+
+          <button class="nav-link text-secondary tx" id="PosatensporTema" data-bs-toggle="tab" data-bs-target="#nav-PosatensporTema" type="button" role="tab" aria-controls="nav-PosatensporTema" aria-selected="false">Produtos por Categoria</button>
+        </div>
+
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-TodasasPostagens" role="tabpanel" aria-labelledby="nav-TodasasPostagens-tab">Todas os Produtos</div>
+
+        <div class="tab-pane fade" id="nav-MinhasPostagens" role="tabpanel" aria-labelledby="nav-MinhasPostagens-tab">Meus Produtos</div>
+
+        <div class="tab-pane fade" id="nav-PosatensporTema" role="tabpanel" aria-labelledby="nav-PosatensporTema-tab">Produtos por Categoria</div>
+
+      </div>
+
+
+      
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="nova-postagem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Novo Produto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <div class="modal-body">
+
+        <div class="form-group">
+            <label for="Nome">Nome</label>
+            <input [(ngModel)] = 'Produto.nome' type="text" class="form-control" id="Nome" placeholder="Digite o Nome">
+        </div>
+
+        <div class="form-group">
+            <label for="preco">preco</label>
+            <input   [(ngModel)] = 'Produto.preco' type="number" class="form-control" id="preco" placeholder="Digite o Preco">
+        </div>
+
+        <div class="form-group">
+            <label for="preco">quantidade</label>
+            <input   [(ngModel)] = 'Produto.quantidade'type="number" class="form-control" id="quantidade" placeholder="Digite o Quantidade">
+        </div>
+
+
+          <div class="form-group">
+            <label for="url">url</label>
+            <input  [(ngModel)] = 'Produto.url' type="text" class="form-control" id="url" placeholder="Digite a Url">
+        </div>
+
+
+        <div class="form-group">
+          <label for="descricao">descricao</label>
+       <textarea  [(ngModel)] = 'Produto.descricao' class="form-control" name="descricao" id="descricao"  rows="3"></textarea>
+      </div>
+
+
+      <div class="form-group">
+        <label for="Titulo">Escolha ou tema ou <a data-bs-dismiss="modal" routerLink = '/categoria'>Cadastre um novo</a></label>
+      <select name="tema" id="tema" class="form-control" [(ngModel)] = 'idCategoria' (change)='findByIdCategoria()'>
+
+        <option *ngFor='let item of listaCategoria' value="{{item.id}}
+        ">{{item.id}} </option>
+      </select>
+
+    </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)='publicar()'>Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,16 +7,41 @@
                 <i class="fas fa-angle-double-right"></i> Home
             </a>
 
-            <h1 class="fs-54 text-center">Segmentos</h1>
+            <h1 class="fs-54 text-center">Materiais</h1>
             <h5 class="fs-18 text-center">Veja aqui todos segmentos cadastrados ou Cadastre um novo:</h5>
 
+            
             <div class="row d-flex justify-content-center mt-4 mb-5">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input [(ngModel)]='categoria.segmentoEmpresa' type="text" class="form-control" value="segmentoEmpresa" placeholder="Digite o segmento da Empresa">
+                       <select class="form-control" name="Segmento" id="Segmento" (change)='seguimento($event)'>
+                           <option value="AlimentosEBebidas">AlimentosEBebidas</option>
+                           <option value="AutomoveisEVeiculos">AutomoveisEVeiculos</option>
+                           <option value="BebesECia">BebesECia</option>
+                           <option value="Brinquedos">Brinquedos</option>
+                           <option value="CasaEDecoracao">CasaEDecoracao</option>
+                           <option value="ConstrucaoEFerramentas">ConstrucaoEFerramentas</option>
+                           <option value="CosmeticosEPerfumaria">CosmeticosEPerfumaria</option>
+                           <option value="Descartaveis">Descartaveis</option>
+                           <option value="Eletrodomesticos">Eletrodomesticos</option>
+                           <option value="Fitness">Fitness</option>
+                           <option value="Informatica">Informatica</option>
+                           <option value="ModaEAcessorios">ModaEAcessorios</option>
+                           <option value="PapelariaEEscritorio">PapelariaEEscritorio</option>
+                           <option value="PetShop">PetShop</option>
+                           <option value="SexShop">SexShop</option>
+                       </select>
                     </div>
 
-                    <div class="d-flex justify-content-center">
+                    <div class="form-group">
+                        <input [(ngModel)]='categoria.materialReutilizado' type="text" class="form-control mb-3 mt-3" value="materialReutilizado" placeholder=" % do tipo de material Reutilizado">
+                    </div>
+
+                    <div class="form-group">
+                        <input [(ngModel)]='categoria.materialBiodegradavel' type="text" class="form-control" value="materialBiodegradavel" placeholder="% do tipo de material Biofrgradavel">
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
                         <button class="btn btn-light" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
@@ -40,8 +65,10 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Categorias</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Segmento</th>
+                        <th scope="col">Mt.Reutilizado</th>
+                        <th scope="col">Mt.Biodegradavel</th>
                         <th scope="col" class="text-right">Modificações</th>
 
                     </tr>
@@ -52,11 +79,13 @@
                     <tr *ngFor='let cat of listaCategorias'>
                         <th scope="row">{{cat.id}}</th>
                         <td>{{cat.segmentoEmpresa}}</td>
+                        <td>{{cat.materialReutilizado}}</td>
+                        <td>{{cat.materialBiodegradavel}}</td>
                         <td class="d-flex justify-content-end up">
 
-                            <button class="btn btn-info mr-3">Editar</button>
+                            <button class="btn btn-info mr-3" [routerLink]="['/Editar', cat.id]">Editar</button>
 
-                            <button class="btn btn-danger">Apagar</button>
+                            <button class="btn btn-danger" [routerLink]="['/Deletar', cat.id]">Apagar</button>
                         </td>
 
                     </tr>

@@ -39,7 +39,7 @@ export class LogarComponent implements OnInit {
       console.log(environment.endereco)
       
 
-      this.router.navigate(['/home'])
+      this.router.navigate(['/Inicio-empresa'])
 
       
     }, erro => {

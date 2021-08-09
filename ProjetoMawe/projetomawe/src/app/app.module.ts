@@ -23,6 +23,9 @@ import { PetComponent } from './pet/pet.component';
 import { PapelariaComponent } from './papelaria/papelaria.component';
 import { SaudeComponent } from './saude/saude.component';
 import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
+import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 
 
@@ -46,7 +49,10 @@ import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
     PetComponent,
     PapelariaComponent,
     SaudeComponent,
-    CosmeticosComponent
+    CosmeticosComponent,
+    InicioEmpresaComponent,
+    CategoriaEditComponent,
+    CategoriaDeleteComponent
   ],
   imports: [
     BrowserModule,
