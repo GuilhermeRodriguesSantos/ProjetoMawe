@@ -21,6 +21,9 @@ export class CategoriaDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    environment.menu = true
+    
     if(environment.token == ''){
       this.router.navigate(['/Logar'])
     }

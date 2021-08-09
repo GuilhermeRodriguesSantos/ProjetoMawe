@@ -30,6 +30,8 @@ export class InicioEmpresaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    environment.menu = true
+    
     if(environment.token == ''){
       this.router.navigate(['/Logar'])
     }
@@ -64,6 +66,7 @@ getAllProduto(){
       this.Produto = resp
       alert('Postagem realizada com sucesso!')
       this.Produto = new produto()
+      this.getAllProduto()
     })
   }
 

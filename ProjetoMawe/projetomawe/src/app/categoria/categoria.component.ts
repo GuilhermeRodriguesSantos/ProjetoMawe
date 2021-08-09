@@ -24,6 +24,8 @@ export class CategoriaComponent implements OnInit {
   // > Componente cadastrar 
   ngOnInit() {
 
+    environment.menu = true
+
     if(environment.token == ''){
       //alert ('Sessão expirada, faça o login novamente')
       this.router.navigate(['/entrar'])

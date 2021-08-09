@@ -40,7 +40,25 @@
 
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-TodasasPostagens" role="tabpanel" aria-labelledby="nav-TodasasPostagens-tab">Todas os Produtos</div>
+        <div class="tab-pane fade show active" id="nav-TodasasPostagens" role="tabpanel" aria-labelledby="nav-TodasasPostagens-tab">
+
+          <div class="card-group mt-5">
+            <div class="card m-0" *ngFor='let item of listaProdutos'>
+              <img src="..." class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h5 class="card-title"> {{item.nome}} </h5>
+                <h5 class="card-title"> {{item.preco}} </h5>
+                <h5 class="card-title"> {{item.descricao}} </h5>
+                <h5 class="card-title"> {{item.quantidade}} </h5>
+                <p class="card-text">  Categoria: {{item.categoria.segmentoEmpresa}} </p>
+                <p class="card-text">  by: {{item.empresaCriadora.nome}} </p>
+              </div>
+              </div>
+              </div>
+          
+
+
+        </div>
 
         <div class="tab-pane fade" id="nav-MinhasPostagens" role="tabpanel" aria-labelledby="nav-MinhasPostagens-tab">Meus Produtos</div>
 
@@ -101,7 +119,7 @@
       <select name="tema" id="tema" class="form-control" [(ngModel)] = 'idCategoria' (change)='findByIdCategoria()'>
 
         <option *ngFor='let item of listaCategoria' value="{{item.id}}
-        ">{{item.id}} </option>
+        ">{{item.segmentoEmpresa}} </option>
       </select>
 
     </div>
@@ -110,7 +128,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)='publicar()'>Publicar</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='publicar()'>Publicar</button>
       </div>
     </div>
   </div>
