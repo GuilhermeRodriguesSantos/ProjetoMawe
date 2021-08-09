@@ -6,6 +6,14 @@
     width: 100%;
 }
 
+.foto{
+    width: 400px;
+}
+
+.estilo-texto{
+    color: white;
+    text-align: justify;
+}
 .fab {
     font-size: 45px;
     text-decoration: none;
