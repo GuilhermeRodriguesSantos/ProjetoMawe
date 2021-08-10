@@ -50,6 +50,7 @@ public class ConfiguracaoSeguranca extends WebSecurityConfigurerAdapter{
  	@Override
  	protected void configure(HttpSecurity http) throws Exception {
  		http.authorizeRequests()
+ 		.antMatchers("/**").permitAll()
  		.antMatchers(HttpMethod.POST , "/ProjetoMawe/Usuario/Cadastrar").permitAll()
  		.antMatchers(HttpMethod.POST, "/ProjetoMawe/Usuario/Logar").permitAll()
  		.anyRequest().authenticated()
