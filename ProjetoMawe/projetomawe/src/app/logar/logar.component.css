@@ -1,0 +1,44 @@
+.cor{
+    background-color: green;
+}
+
+.espaca{
+    text-align: center;
+    margin-top: 30%;
+}
+
+.a{
+    width:  300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    outline: none;
+
+}
+
+.tm{
+    width: 140px;
+}
+
+.img{
+    background-image: url(../../assets/img/Folhagem2.png);
+    background-repeat: no-repeat;
+    background-size: 700px;
+    width: 100vw;
+    height: 100vh;;
+
+}
+
+.fundo2-div{
+    background-color: #FBAB7E;  
+    background-image: linear-gradient(62deg, #46fc4c 0%, #B9A4BF 100%);
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+   
+}
+
+.menu:hover{
+    background-color: rgb(73, 192, 62);
+}
