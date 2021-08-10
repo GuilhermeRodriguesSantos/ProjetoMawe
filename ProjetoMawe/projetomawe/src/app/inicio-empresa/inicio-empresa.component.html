@@ -71,7 +71,11 @@
                     <p class="card-text">{{produto.nome}} </p>
                     <p class="card-text">{{produto.preco}} </p>
                     <p class="card-text">{{produto.descricao}} </p>
-                    <p class="card-text">{{produto.quantidade}} </p>  
+                    <p class="card-text">{{produto.quantidade}} </p> 
+                    
+                    
+                    <a [routerLink]="['/produtoed', produto.id]"  class="text-info mr-3">Editar</a>
+                    <a [routerLink]="['/produtodl', produto.id]" class="text-danger espaco-b">Apagar</a>
                 </div>
               </div>
          </div>

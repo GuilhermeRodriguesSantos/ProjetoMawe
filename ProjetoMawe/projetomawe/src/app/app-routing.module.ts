@@ -19,6 +19,8 @@ import { SaudeComponent } from './saude/saude.component';
 import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
+import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
 
 
 const routes: Routes = [
@@ -41,7 +43,9 @@ const routes: Routes = [
   {path: "cosmeticos", component: CosmeticosComponent},
   {path: "Inicio-empresa", component:InicioEmpresaComponent},
   {path: "Editar/:id", component: CategoriaEditComponent},
-  {path: "Deletar/:id", component: CategoriaDeleteComponent}
+  {path: "Deletar/:id", component: CategoriaDeleteComponent},
+  {path: "produtoed/:id", component: ProdutosEditComponent},
+  {path: "produtodl/:id", component:ProdutosApagarComponent  }
   
 
 

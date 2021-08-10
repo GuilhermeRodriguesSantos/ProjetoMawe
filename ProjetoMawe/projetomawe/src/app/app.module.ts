@@ -27,6 +27,8 @@ import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
 import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
+import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
 
 
 
@@ -54,7 +56,9 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
     CosmeticosComponent,
     InicioEmpresaComponent,
     CategoriaEditComponent,
-    CategoriaDeleteComponent
+    CategoriaDeleteComponent,
+    ProdutosEditComponent,
+    ProdutosApagarComponent
   ],
   imports: [
     BrowserModule,

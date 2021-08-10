@@ -19,6 +19,10 @@ export class ProdutoService {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
 
+    getByIdProduto(id: number): Observable<produto>{
+      return this.http.get<produto>(`http://localhost:8080/produto/buscar/${id}`, this.token)
+
+    }
 
     postProduto(Produto:produto): Observable<produto>{
       return this.http.post<produto>('http://localhost:8080/produto/cadastrar',Produto, this.token)
@@ -26,6 +30,14 @@ export class ProdutoService {
 
     getAllProduto(): Observable<produto[]>{
       return this.http.get<produto[]>('http://localhost:8080/produto/buscar', this.token)
+    }
+
+    putProduto(Produto: produto): Observable<produto>{ 
+        return this.http.put<produto>('http://localhost:8080/produto/alterar', Produto, this.token)
+    }
+
+    deleteProduto(id: number){
+      return this.http.delete(`http://localhost:8080/produto/delete/${id}`, this.token)
     }
 }
     
