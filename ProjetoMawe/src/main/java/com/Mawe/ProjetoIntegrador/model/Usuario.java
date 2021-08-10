@@ -79,8 +79,9 @@ public class Usuario {
 	 Produto, relaciona um usuário que poderá cadastrar muitos produtos
 	 */
 	//alterado
-	@JsonIgnoreProperties ({"empresaCriadora", "categoria"})
+	
 	@OneToMany (mappedBy = "empresaCriadora")
+	@JsonIgnoreProperties ({"empresaCriadora", "categoria", "produtosCadastrados"})
 	private List<Produto> produtosCadastrados;
 	
 	/**
@@ -89,6 +90,7 @@ public class Usuario {
 	 */
 	//alterado
 	@ManyToMany (mappedBy = "usuariosCompradores")
+	@JsonIgnoreProperties ({"empresaCriadora", "categoria", "produtosCadastrados"})
 	private List<Produto> produtosComprados;
 
 	public Long getId() {
