@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -13,10 +15,13 @@ export class CategoriaComponent implements OnInit {
   Segmento: string
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
+  idUsuario = environment.id
+  usuario: Usuario
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private authService: AuthService
   ) { }
 
 
@@ -40,6 +45,15 @@ export class CategoriaComponent implements OnInit {
         })
       
     }
+
+    findByIdUsuario(){
+      this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
+        this.usuario = resp
+        console.log(this.usuario)
+      })
+    
+    }
+
 
   cadastrar(){
     this.categoria.segmentoEmpresa = this.Segmento

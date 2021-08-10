@@ -5,8 +5,8 @@ export class Categoria {
 
     public id: number
     public segmentoEmpresa: string
-    public materialReutilizado: String
-    public materialBiodegradavel: String
-    public produto: produto []
+    public materialReutilizado: string
+    public materialBiodegradavel: string
+    public produto: produto[]
     public empresaCriadora: Usuario
 }

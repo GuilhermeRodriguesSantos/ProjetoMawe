@@ -10,6 +10,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -26,6 +27,7 @@ import { CosmeticosComponent } from './cosmeticos/cosmeticos.component';
 import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+
 
 
 
@@ -60,7 +62,10 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
-})
+}) 
 export class AppModule { }

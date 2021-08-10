@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { produto } from '../model/produto';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -23,24 +24,34 @@ export class InicioEmpresaComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idusuario = environment.id
 
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
+
+
+
     environment.menu = true
     
     if(environment.token == ''){
+      alert('Sua seção expirou,, por favor se logue novamente')
       this.router.navigate(['/Logar'])
     }
 
     this.getAllCategoria()
     this.getAllProduto()
+
+    console.log(this.usuario)
   }
 
   getAllCategoria(){
+     this.listaCategoria = []
+
     this.categoriaService.getAll().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp
     })
@@ -54,6 +65,15 @@ getAllProduto(){
   })
 }
 
+
+findByIdUsuario(){
+  this.authService.getByIdUsuario(this.idusuario).subscribe((resp: Usuario) => {
+    this.usuario = resp
+    console.log(this.usuario)
+
+  })
+
+}
 
   publicar(){
     this.categoria.id = this.idCategoria

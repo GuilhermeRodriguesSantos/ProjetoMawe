@@ -1,16 +1,9 @@
-  
-.texto{
-    font-size: 54px;
+.tamanho-texto{
+    font-size: 56pt
 }
-
-.texto2{
-    font-size: 18px;
+.tamanho-texto-2{
+    font-size: 18pt;
 }
-
-.bt{
-    margin-right: 10px;
-}
-
-.tx{
-    font-weight: bold;
+.dit{
+    margin-left: 10px;
 }
