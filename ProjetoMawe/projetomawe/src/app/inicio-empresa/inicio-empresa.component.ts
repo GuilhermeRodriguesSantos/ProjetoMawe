@@ -42,6 +42,7 @@ export class InicioEmpresaComponent implements OnInit {
       alert('Sua seção expirou,, por favor se logue novamente')
       this.router.navigate(['/Logar'])
     }
+      
 
     this.getAllCategoria()
     this.getAllProduto()
