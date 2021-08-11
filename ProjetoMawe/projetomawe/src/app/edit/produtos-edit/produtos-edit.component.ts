@@ -74,7 +74,7 @@ export class ProdutosEditComponent implements OnInit {
       this.Produto = resp
 
 
-      alert('Produto Atualizado com Sucesso!')
+      alert('Produto Atualizado com Sucessoo!')
       this.router.navigate(['/Inicio-empresa'])
 
     })
