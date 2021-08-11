@@ -16,12 +16,12 @@ export class AuthService {
 
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('http://localhost:8080/ProjetoMawe/Usuario/Logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>('https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Logar', usuarioLogin)
 
   }
-
+ 
   cadastar(usuario: Usuario) :Observable<Usuario>{
-    return this.http.post<Usuario>('http://localhost:8080/ProjetoMawe/Usuario/Cadastrar', usuario)
+    return this.http.post<Usuario>(' https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
   }
   logado(){
     let ok: boolean = true
@@ -38,7 +38,7 @@ export class AuthService {
 
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`http://localhost:8080/ProjetoMawe/Usuario/Buscar/${id}`, this.token)
+    return this.http.get<Usuario>(` https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
   }
 
   loginOff(){
