@@ -22,8 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Mawe.ProjetoIntegrador.model.Produto;
 import com.Mawe.ProjetoIntegrador.repository.ProdutoRepository;
 
-
-
 @RestController
 @RequestMapping("/produto")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -31,7 +29,6 @@ public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository repository;
-	
 	
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Produto> cadastrar (@Valid @RequestBody Produto novoProduto){
@@ -109,7 +106,7 @@ public class ProdutoController {
 	 * Este metodo é responsável por alterar o produto
 	 * 
 	 * @nomeobjeto Alterar()
-	 * @param Entidade Produto alterada
+	 * @param Entidade Produto alteradaaaa
 	 * @return Retorna o a Entidade produto alterada.
 	 */	
 	@PutMapping("/alterar")
@@ -118,7 +115,7 @@ public class ProdutoController {
 	}
 	
 	/**
-	 * Este metodo é responsável por deletar o id do produto
+	 * Este metodo é responsável por deletarrrr o id do produto
 	 * 
 	 * @nomeobjeto Deletar() 
 	 * @param Deleta o parametro id 

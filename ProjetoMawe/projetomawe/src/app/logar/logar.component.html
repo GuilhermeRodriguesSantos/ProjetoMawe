@@ -1,0 +1,37 @@
+<div class="col-md-6 img p-5">
+
+    <a routerLink="/home" class="text-white text-left">
+        <i class="fas fa-angle-double-right"></i> Home
+    </a>
+
+    <div class="row d-flex justify-content-center ">
+        <div class="fundo2-div">
+
+
+            <div class="espaca">
+                <div class="d-flex justify-content-center ">
+                    <h1>Login:</h1>
+                </div>
+
+                <div>
+                    <input [(ngModel)]='usuarioLogin.email' type="email" id="email" placeholder="Digite seu E-mail:" class="mt-4 mb-4 a">
+                </div>
+
+                <div>
+                    <input [(ngModel)]='usuarioLogin.senha' type="password" id="senha" placeholder="Digite sua senha:" class="mb-4 a">
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-primary mb-4 tm menu" (click)='logar()'>Logar</button>
+                </div>
+
+                <div>
+                    <br>
+                    <br>
+
+                    <p>Se caso não tiver uma conta | <a routerLink="/Cadastrar">Cadastre-se</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
