@@ -28,12 +28,14 @@ export class CategoriaEditComponent implements OnInit {
       this.router.navigate(['/Logar'])
   }
   let id = this.route.snapshot.params['id']
+  // alert("id "+id)
   this.findByIdCategoria(id)
 }
 
 findByIdCategoria(id: number){
   this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
-    this.categoria= resp
+    this.categoria = resp
+    //alert("categoria id"+this.categoria.id)
   })
 
 }
@@ -44,10 +46,12 @@ seguimento(event: any){
 
 atualizar(){
   this.categoria.segmentoEmpresa = this.Segmento
+ 
   this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
-    this.categoria = resp
-    alert('Categoria alterado com sucesso!')
-    this.router.navigate(['/categoria'])
-  })
+     this.categoria = resp
+    
+     alert('Categoria alterado com sucesso!')
+     this.router.navigate(['/categoria'])
+   })
 }
 }
