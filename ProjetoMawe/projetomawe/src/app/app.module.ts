@@ -29,6 +29,7 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
 import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
+import { DoacaoComponent } from './doacao/doacao.component';
 
 
 
@@ -58,7 +59,8 @@ import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apaga
     CategoriaEditComponent,
     CategoriaDeleteComponent,
     ProdutosEditComponent,
-    ProdutosApagarComponent
+    ProdutosApagarComponent,
+    DoacaoComponent
   ],
   imports: [
     BrowserModule,

@@ -66,3 +66,19 @@ li a {
 .tm-itens:hover{
     color: black;
 }
+
+.botao:hover{
+   
+    background-color:rgb(235, 58, 27);
+        color: white;
+        font-weight: bold;
+        size: 200px;
+        
+        
+}
+.botao2{
+    
+    color: white;
+   
+}
+
