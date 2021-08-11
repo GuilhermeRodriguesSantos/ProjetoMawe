@@ -9,9 +9,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import com.Mawe.ProjetoIntegrador.model.util.TipoCategoria;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -56,6 +56,17 @@ public class Categoria {
 	@JsonIgnoreProperties ({"categoria", "empresaCriadora"})
 	private List<Produto> produto;
 
+	@ManyToOne
+	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 	public List<Produto> getProduto() {
 		return produto;
 	}
