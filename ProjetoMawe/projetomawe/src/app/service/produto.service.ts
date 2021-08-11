@@ -19,13 +19,25 @@ export class ProdutoService {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
 
+    getByIdProduto(id: number): Observable<produto>{
+      return this.http.get<produto>(`https://ecomawe.herokuapp.com/produto/buscar/${id}`)
+
+    }
 
     postProduto(Produto:produto): Observable<produto>{
-      return this.http.post<produto>('http://localhost:8080/produto/cadastrar',Produto, this.token)
+      return this.http.post<produto>('https://ecomawe.herokuapp.com/produto/cadastrar',Produto)
     }
 
     getAllProduto(): Observable<produto[]>{
-      return this.http.get<produto[]>('http://localhost:8080/produto/buscar', this.token)
+      return this.http.get<produto[]>('https://ecomawe.herokuapp.com/produto/buscar')
+    }
+
+    putProduto(Produto: produto): Observable<produto>{ 
+        return this.http.put<produto>('https://ecomawe.herokuapp.com/produto/alterar', Produto)
+    }
+
+    deleteProduto(id: number){
+      return this.http.delete(`https://ecomawe.herokuapp.com/produto/delete/${id}`, this.token)
     }
 }
     

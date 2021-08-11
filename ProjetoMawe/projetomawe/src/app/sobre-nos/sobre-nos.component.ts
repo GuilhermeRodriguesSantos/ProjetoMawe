@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-sobre-nos',
@@ -10,6 +11,7 @@ export class SobreNosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    environment.menu = true
   }
 
 }

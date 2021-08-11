@@ -18,12 +18,23 @@ export class CategoriaService {
  }
 
   getAll(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categoria/buscartodos', this.token)
+    return this.http.get<Categoria[]>('https://ecomawe.herokuapp.com/categoria/buscartodos')
   }
   postCategoria(categoria:Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categoria/Cadastrar', categoria,this.token)
+    return this.http.post<Categoria>('https://ecomawe.herokuapp.com/categoria/Cadastrar', categoria)
   }
 
+  getByIdCategoria(id: number): Observable<Categoria>{
+    return this.http.get<Categoria> (`https://ecomawe.herokuapp.com/categoria/buscarpeloid/${id}`)
+  }
+  
+  putCategoria(  categoria: Categoria): Observable<Categoria>{
+    return this.http.put<Categoria>('https://ecomawe.herokuapp.com/categoria/Alterar',  categoria)
+  }
+
+  deleteCategoria(id: number){
+    return this.http.delete(`https://ecomawe.herokuapp.com/categoria/deletar/${id}`)
+  }
 }
 
 
