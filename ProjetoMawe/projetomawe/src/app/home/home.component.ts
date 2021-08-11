@@ -10,8 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
+    
     environment.menu = true
   }
 

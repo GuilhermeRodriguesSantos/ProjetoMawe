@@ -41,7 +41,4 @@ export class ProdutoComponent implements OnInit {
       this.Produto = new produto()
     }))
   }
-
-
-
 }
