@@ -1,3 +1,4 @@
+import { DoacaoComponent } from './doacao/doacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
@@ -45,8 +46,8 @@ const routes: Routes = [
   {path: "Editar/:id", component: CategoriaEditComponent},
   {path: "Deletar/:id", component: CategoriaDeleteComponent},
   {path: "produtoed/:id", component: ProdutosEditComponent},
-  {path: "produtodl/:id", component:ProdutosApagarComponent  }
-  
+  {path: "produtodl/:id", component:ProdutosApagarComponent  },
+  {path: "doacao", component: DoacaoComponent}
 
 
 ];
