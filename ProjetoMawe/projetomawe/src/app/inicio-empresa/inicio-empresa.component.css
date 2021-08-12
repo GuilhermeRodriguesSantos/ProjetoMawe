@@ -28,27 +28,16 @@
     color: #74b486;
 }
 
-.rounded {
-    border-radius: 8px !important;
-    cursor: pointer;
-}
-
-.img-fluid {
-    width: 100%;
-}
-
-.card-wrapper .card-rotating {
-    height: auto;
-}
-
-.face.back {
-    height: auto;
-}
-
-.grey-text {
-    color: grey
-}
-
 .cor-card {
     background: linear-gradient(-45deg, #5fe484, #74b486);
+}
+
+.img-card {
+    width: 300px;
+    height: 300px;
+    align-items: center;
+}
+
+.sep {
+    margin-left: 30px;
 }
