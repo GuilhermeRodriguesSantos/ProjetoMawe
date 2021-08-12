@@ -1,13 +1,48 @@
-.tamanho-texto{
+.tamanho-texto {
     font-size: 56pt
 }
-.tamanho-texto-2{
+
+.tamanho-texto-2 {
     font-size: 18pt;
 }
-.dit{
+
+.dit {
     margin-left: 10px;
 }
 
-.espaco-b{
+.espaco-b {
     margin-left: 10px;
+}
+
+.cor {
+    background-color: #74b486;
+}
+
+.text-btn {
+    color: #74b486;
+}
+
+.rounded {
+    border-radius: 8px !important;
+    cursor: pointer;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.card-wrapper .card-rotating {
+    height: auto;
+}
+
+.face.back {
+    height: auto;
+}
+
+.grey-text {
+    color: grey
+}
+
+.cor-card {
+    background: linear-gradient(-45deg, #5fe484, #74b486);
 }

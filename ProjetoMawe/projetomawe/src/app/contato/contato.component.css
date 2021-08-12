@@ -23,3 +23,11 @@
     border-radius: 20px;
    
 }
+
+.menu:hover{
+  background-color: #3b5998;
+}
+
+.menu2:hover{
+  background-color: #a10a2b;
+}

@@ -23,6 +23,7 @@ export class InicioEmpresaComponent implements OnInit {
   listaProdutos: produto[]
   usuario: Usuario = new Usuario()
   idusuario = environment.id
+  usuarioo: Usuario[]
 
 
   constructor(
@@ -39,7 +40,7 @@ export class InicioEmpresaComponent implements OnInit {
     environment.menu = true
     
     if(environment.token == ''){
-      alert('Sua seção expirou,, por favor se logue novamente')
+      alert('Sua sessão expirou, por favor se logue novamente!')
       this.router.navigate(['/Logar'])
     }
       
@@ -82,10 +83,10 @@ findByIdUsuario(){
 
    this.usuario.id = environment.id
     this.Produto.empresaCriadora = this.usuario 
-    console.log("Postagem "+JSON.stringify(this.Produto))
+    console.log("Produto "+JSON.stringify(this.Produto))
     this.produtoService.postProduto(this.Produto).subscribe((resp: produto) => {
       this.Produto = resp
-      alert('Postagem realizada com sucesso!')
+      alert('Produto cadastrado com sucesso!')
       this.Produto = new produto()
       this.getAllProduto()
     })

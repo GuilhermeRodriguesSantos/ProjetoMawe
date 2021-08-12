@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-    <div class="row bg-secondary text-white">
+    <div class="row color-back text-white d-flex justify-content-center">
         <div class="col-md-12">
 
             <a routerLink="/Inicio-empresa" class="text-white text-left">
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-light" (click)='cadastrar()'>Cadastrar</button>
+                        <button class="btn btn-light mat" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
                 </div>
@@ -54,13 +54,14 @@
 </div>
 
 <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 d-flex justify-content-center">
         <div class="col-md-12">
             <h2 class="text-center">Todos os Segmentos</h2>
         </div>
     </div>
 
-    <div class="row d-flex mt-3 mb-5 justify-content-center">
+    
+    <div class="row d-flex align-items-center">
         <div class="col-md-6">
             <table class="table table-hover">
                 <thead>
@@ -73,6 +74,7 @@
 
                     </tr>
 
+
                 </thead>
                 <tbody>
 
@@ -83,14 +85,22 @@
                         <td>{{cat.materialBiodegradavel}}</td>
                         <td class="d-flex justify-content-end up">
 
-                            <button class="btn btn-info mr-3" [routerLink]="['/Editar', cat.id]">Editar</button>
-
-                            <button class="btn btn-danger" [routerLink]="['/Deletar', cat.id]">Apagar</button>
-                        </td>
-
+                            <button class="btn btn-info mb-4 m-lg-3 tm menu fw-bold" [routerLink]="['/Editar', cat.id]">Editar</button>
+                            <button class="btn btn-danger mb-4 mr-lg-3 tm menu2 fw-bold" [routerLink]="['/Deletar', cat.id]">Apagar</button>
                     </tr>
                 </tbody>
+                <!--btn btn-info mr-3 m-lg-3 tm menu fw-bold-->
+                                <!--btn btn-danger m-3 m-lg-3 tm menu2 fw-bold-->
+
             </table>
         </div>
+        <div class="col-md-4 foto">
+
+            <img src="https://i.imgur.com/5UItfFb.png" alt="Mandando mensagem" width="400px" height="400px">
+      
+          </div>
+        
     </div>
 </div>
+
+
