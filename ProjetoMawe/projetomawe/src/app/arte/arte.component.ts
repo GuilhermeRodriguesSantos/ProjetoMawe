@@ -11,7 +11,6 @@ export class ArteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
-    environment.menu = true
   }
 
 }

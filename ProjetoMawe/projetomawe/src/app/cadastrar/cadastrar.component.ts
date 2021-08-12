@@ -24,7 +24,6 @@ export class CadastrarComponent implements OnInit {
     window.scroll(0,0)
 
 
-    environment.menu = false
   }
 
   confirmSenha (event: any){

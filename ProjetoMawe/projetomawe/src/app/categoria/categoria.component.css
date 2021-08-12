@@ -5,3 +5,23 @@
 .fs-18 {
     font-size: 18pt;
 }
+
+.color-back {
+    background-color: #74b486;
+}
+
+.menu:hover{
+    background-color: #3b5998;
+}
+
+.menu2:hover{
+    background-color: #a10a2b;
+}
+
+.mat:hover{
+    background-color: #2a6d03;
+
+}
+.foto{
+    margin-left: 120px;
+}
