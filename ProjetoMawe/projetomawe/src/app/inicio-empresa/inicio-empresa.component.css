@@ -33,9 +33,9 @@
 }
 
 .img-card {
-    width: 300px;
-    height: 300px;
-    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-size: cover; 
 }
 
 .sep {
