@@ -28,9 +28,9 @@
 
 
 
-<div class="container mt-5 mb-5 " id="Produtos">
+<div class="container mt-5 mb-5" id="Produtos">
     <nav>
-        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+        <div class="nav nav-tabs d-flex justify-content-center sep" id="nav-tab" role="tablist">
 
             <button class="nav-link active text-secondary font-weight-bold" id="nav-TodosProdutos-tab" data-bs-toggle="tab" data-bs-target="#nav-TodosProdutos" type="button" role="tab" aria-controls="nav-TodosProdutos" aria-selected="true">Todos os Produtos</button>
 
@@ -43,12 +43,15 @@
         <div class="tab-pane fade show active " id="nav-TodosProdutos" role="tabpanel" aria-labelledby="nav-TodosProdutos-tab">
 
             <div class="card-group ">
-                <div class="card text-center cor-card" style="width: 18rem;" *ngFor='let produto of listaProdutos'>
-                    <img src="{{produto.url}}" class="card-img-top" alt="...">
+                <div class="card text-center cor-card" *ngFor='let produto of listaProdutos'>
+                    <div class="card-header">
+                        <img src="{{produto.url}}" class="card-img-top img-card card header" alt="...">
+                    </div>
                     <div class="card-body">
                         <h4 class="card-title ">{{produto.nome}}</h4>
                         <p class="card-text">{{produto.descricao}}</p>
                     </div>
+
                     <ul class="list-group list-group-flush cor-card">
                         <li class="list-group-item">Quantidade: {{produto.quantidade}}</li>
                         <li class="list-group-item">Categoria: {{produto.categoria.segmentoEmpresa}}</li>
@@ -63,8 +66,11 @@
         <div class="tab-pane fade" id="nav-MeusProdutos" role="tabpanel" aria-labelledby="nav-MeusProdutos-tab">
 
             <div class="card-group">
-                <div class="card text-center cor-card" style="width: 18rem;" *ngFor='let produto of usuario.produtosCadastrados'>
-                    <img src="{{produto.url}}" class="card-img-top" alt="...">
+                <div class="card text-center cor-card" *ngFor='let produto of usuario.produtosCadastrados'>
+                    <div class="card-header">
+                        <img src="{{produto.url}}" class="card-img-top img-card " alt="...">
+
+                    </div>
                     <div class="card-body">
                         <h4 class="card-title">{{produto.nome}}</h4>
                         <p class="card-text">{{produto.descricao}}</p>
@@ -85,59 +91,60 @@
         </div>
 
     </div>
+</div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="NovoProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Novo Produto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Modal -->
+<div class="modal fade" id="NovoProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Novo Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="Nome">Nome</label>
+                    <input [(ngModel)]='Produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o Nome:">
                 </div>
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label for="Nome">Nome</label>
-                        <input [(ngModel)]='Produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o Nome:">
-                    </div>
 
 
-                    <div class="form-group">
-                        <label for="preco">Preço</label>
-                        <input [(ngModel)]='Produto.preco' type="number" class="form-control" id="preco" placeholder="Digite o Preço:">
-                    </div>
+                <div class="form-group">
+                    <label for="preco">Preço</label>
+                    <input [(ngModel)]='Produto.preco' type="number" class="form-control" id="preco" placeholder="Digite o Preço:">
+                </div>
 
 
-                    <div class="form-group">
-                        <label for="Quantidade">Quantidade</label>
-                        <input [(ngModel)]='Produto.quantidade' type="number" class="form-control" id="Quantidade" placeholder="Digite a Quantidade:">
-                    </div>
+                <div class="form-group">
+                    <label for="Quantidade">Quantidade</label>
+                    <input [(ngModel)]='Produto.quantidade' type="number" class="form-control" id="Quantidade" placeholder="Digite a Quantidade:">
+                </div>
 
 
-                    <div class="form-group">
-                        <label for="descricao">descricao</label>
-                        <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Digite a Descrição:">
-                    </div>
+                <div class="form-group">
+                    <label for="descricao">descricao</label>
+                    <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Digite a Descrição:">
+                </div>
 
 
-                    <div class="form-group">
-                        <label for="url">Url</label>
-                        <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Digite a Url:">
-                    </div>
+                <div class="form-group">
+                    <label for="url">Url</label>
+                    <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Digite a Url:">
+                </div>
 
-                    <div class="form-group">
-                        <label for="Categoria">Escolha um Segmento ou | <a data-bs-dismiss="modal" routerLink="/categoria">Cadastre-se um novo</a>:</label>
-                        <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                <div class="form-group">
+                    <label for="Categoria">Escolha um Segmento ou | <a data-bs-dismiss="modal" routerLink="/categoria">Cadastre-se um novo</a>:</label>
+                    <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
                 <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.segmentoEmpresa}}</option>
             </select>
-                    </div>
+                </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='publicar()'>Cadastrar</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)='publicar()'>Cadastrar</button>
             </div>
         </div>
     </div>
+</div>
