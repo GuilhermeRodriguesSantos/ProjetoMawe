@@ -1,0 +1,43 @@
+.tamanho-texto {
+    font-size: 56pt
+}
+
+.tamanho-texto-2 {
+    font-size: 18pt;
+}
+
+
+.a{
+    width: 100;
+    height: 100;
+}
+
+.dit {
+    margin-left: 10px;
+}
+
+.espaco-b {
+    margin-left: 10px;
+}
+
+.cor {
+    background-color: #74b486;
+}
+
+.text-btn {
+    color: #74b486;
+}
+
+.cor-card {
+    background: linear-gradient(-45deg, #5fe484, #74b486);
+}
+
+.img-card {
+    width: 150px;
+    height: 150px;
+    background-size: cover; 
+}
+
+.sep {
+    margin-left: 30px;
+}

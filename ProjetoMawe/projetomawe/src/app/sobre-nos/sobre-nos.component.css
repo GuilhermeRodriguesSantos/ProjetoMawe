@@ -5,8 +5,8 @@
 
 .img-border {
     border-radius: 15px;
-    width: 230px;
-    height: 350px;
+    width: 290px;
+    height: 370px;
     
 }
 
@@ -49,3 +49,89 @@
     text-align: center;
 }
 
+.a{
+    width: 200px;
+    height: 200px;
+}
+body {
+    background-color: #FFEBEE
+}
+
+.card {
+    width: 400px;
+    border: none;
+    border-radius: 14px !important
+}
+
+.area1 {
+    background-color: #ffbf00;
+    border-top-left-radius: 14px !important;
+    border-top-right-radius: 14px !important;
+    padding-top: 83px !important
+}
+
+.image {
+    top: -62px;
+    position: relative
+}
+
+.image img {
+    box-shadow: 5px 6px 6px 2px #e9ecef
+}
+
+.area2 {
+    background-color: #fff;
+    border-bottom-left-radius: 14px !important;
+    border-bottom-right-radius: 14px !important
+}
+
+.name {
+    font-size: 25px;
+    font-weight: 650
+}
+
+.information {
+    color: rgb(70, 68, 68); 
+    font-weight: 500;
+    font-size: 16px
+}
+
+.list-icons {
+    display: inline-flex;
+    color: #C5CAE9
+}
+
+.list-icons li {
+    list-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    width: 49px;
+    margin-right: 10px
+}
+
+.list-icons li i {
+    font-size: 17px;
+    color: #fff
+}
+
+@media (max-width:700px) {
+    .list-icons {
+        display: block
+    }
+}
+
+.github {
+    background: #000000
+}
+
+.google {
+    background: #3f729b
+}
+
+.linkedin {
+    background: #0044ff
+}
+
+.card{
+    margin: left 40px;
+}

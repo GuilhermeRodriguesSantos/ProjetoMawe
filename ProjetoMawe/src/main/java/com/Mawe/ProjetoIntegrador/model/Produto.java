@@ -65,7 +65,7 @@ public class Produto {
 	 Categoria, relaciona muito produtos para uma categoria 
 	 */
 	@ManyToOne
-	@JsonIgnoreProperties ({"produtosCadastrados", "produto", "usuariosCompradores"})
+	@JsonIgnoreProperties ({"produtosCadastrados", "empresaCriadora", "produto", "categoria" , "usuariosCompradores"})
 	//@NotNull (message = "É obrigatório informar a categoria do produto")
 	private Categoria categoria;
 	
@@ -75,6 +75,7 @@ public class Produto {
 	 */
 	//alterado
 	@ManyToOne
+	@JsonIgnoreProperties({"produtosCadastrados","produtosComprados", "empresaCriadora", "categoria"})
 	private Usuario empresaCriadora;
 	
 	/**
@@ -83,6 +84,7 @@ public class Produto {
 	 */
 	//alterado
 	@ManyToMany
+	@JsonIgnoreProperties("produtosCadastrados")
 	private List<Usuario> usuariosCompradores;
 	
 	public Categoria getCategoria() {

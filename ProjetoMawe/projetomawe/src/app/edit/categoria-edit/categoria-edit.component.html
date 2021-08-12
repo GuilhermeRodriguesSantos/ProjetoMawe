@@ -1,0 +1,55 @@
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-decondary">atualizar Categoria:</h1>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+
+       
+
+            <div class="form-group mb-3">
+                <select class="form-control" name="Segmento" id="Segmento" (change)='seguimento($event)'>
+                    <option value="AlimentosEBebidas">AlimentosEBebidas</option>
+                    <option value="AutomoveisEVeiculos">AutomoveisEVeiculos</option>
+                    <option value="BebesECia">BebesECia</option>
+                    <option value="Brinquedos">Brinquedos</option>
+                    <option value="CasaEDecoracao">CasaEDecoracao</option>
+                    <option value="ConstrucaoEFerramentas">ConstrucaoEFerramentas</option>
+                    <option value="CosmeticosEPerfumaria">CosmeticosEPerfumaria</option>
+                    <option value="Descartaveis">Descartaveis</option>
+                    <option value="Eletrodomesticos">Eletrodomesticos</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Informatica">Informatica</option>
+                    <option value="ModaEAcessorios">ModaEAcessorios</option>
+                    <option value="PapelariaEEscritorio">PapelariaEEscritorio</option>
+                    <option value="PetShop">PetShop</option>
+                    <option value="SexShop">SexShop</option>
+                </select>
+             </div>
+
+            <div class="form-group mb-3">
+                <label for="materialReutilizavel"> Nova % de material reutilizavel: </label>
+                <input type="text" value="materialReutilizavel" class="form-control" id="materialReutilizavel" [(ngModel)] = 'categoria.materialReutilizado'>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="materialBiodegradavel"> Nova % de material Biodegradavel: </label>
+                <input type="text" value="materialBiodegradavel" class="form-control" id="materialBiodegradavel" [(ngModel)] = 'categoria.materialBiodegradavel'>
+            </div>
+
+
+            <div class="d-flex justify-content-center mt-3 mb-3">
+                <button class="btn btn-danger mr-3 m-lg-3"  routerLink='/categoria'>Cancelar</button>
+                <button class="btn btn-success mr-3 m-lg-3" (click)='atualizar()'>Editar</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

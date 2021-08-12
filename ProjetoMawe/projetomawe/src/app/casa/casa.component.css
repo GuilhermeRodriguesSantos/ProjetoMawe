@@ -2,10 +2,11 @@
     font-size: 50pt;
 }
 
-.deco {
-    list-style: none;
+.im {
+    width: 960px;
+    height: 640px;
 }
 
-.st {
-    font-style: oblique;
+.pad {
+    padding-left: 10;
 }

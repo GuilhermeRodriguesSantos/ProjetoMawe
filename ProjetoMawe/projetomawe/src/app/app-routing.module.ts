@@ -1,3 +1,4 @@
+import { DoacaoComponent } from './doacao/doacao.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,11 @@ import { InfantilComponent } from './infantil/infantil.component';
 import { PetComponent } from './pet/pet.component';
 import { PapelariaComponent } from './papelaria/papelaria.component';
 import { SaudeComponent } from './saude/saude.component';
+import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
+import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
 
 
 const routes: Routes = [
@@ -35,8 +41,13 @@ const routes: Routes = [
   {path: 'pet', component: PetComponent},
   {path: 'papelaria', component: PapelariaComponent},
   {path: "saude", component: SaudeComponent},
-  {path: "cosmeticos", component: CosmeticosComponent}
-  
+  {path: "cosmeticos", component: CosmeticosComponent},
+  {path: "Inicio-empresa", component:InicioEmpresaComponent},
+  {path: "Editar/:id", component: CategoriaEditComponent},
+  {path: "Deletar/:id", component: CategoriaDeleteComponent},
+  {path: "produtoed/:id", component: ProdutosEditComponent},
+  {path: "produtodl/:id", component:ProdutosApagarComponent  },
+  {path: "doacao", component: DoacaoComponent}
 
 
 ];

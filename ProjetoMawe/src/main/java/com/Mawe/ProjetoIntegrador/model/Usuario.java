@@ -69,7 +69,6 @@ public class Usuario {
 	/**
 	 *  Este atributo permite o usuário acrescentar um endereço
 	 */
-	//observação, retirada de notempty, size
 	@NotEmpty(message = "Não pode ser nulo!")
 	@Size(min = 5)
 	private String endereco;
@@ -78,18 +77,38 @@ public class Usuario {
 	 * Este parâmetro, que descende da tabela
 	 Produto, relaciona um usuário que poderá cadastrar muitos produtos
 	 */
-	//alterado
+<<<<<<< HEAD
 	@JsonIgnoreProperties ({"empresaCriadora", "categoria"})
+=======
+	//alterado
+	
+>>>>>>> 98f5e00248528b0aadb38426b075579ce5d77089
 	@OneToMany (mappedBy = "empresaCriadora")
+	@JsonIgnoreProperties ({"empresaCriadora", "categoria", "produtosCadastrados"})
 	private List<Produto> produtosCadastrados;
 	
 	/**
 	 * Este parâmetro, que descende da tabela
 	 Produto, relaciona muitos compradores a muitos produtos
 	 */
-	//alterado
 	@ManyToMany (mappedBy = "usuariosCompradores")
+	@JsonIgnoreProperties ({"empresaCriadora", "categoria", "produtosCadastrados"})
 	private List<Produto> produtosComprados;
+	
+	/**	
+	 * Este parâmetro, que descende da tabela
+	 Categoria, relaciona muitos usuarios a uma categoria
+	 */
+	@OneToMany(mappedBy = "usuario")
+	private List<Categoria> categoria;
+
+	public List<Categoria> getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(List<Categoria> categoria) {
+		this.categoria = categoria;
+	}
 
 	public Long getId() {
 		return id;

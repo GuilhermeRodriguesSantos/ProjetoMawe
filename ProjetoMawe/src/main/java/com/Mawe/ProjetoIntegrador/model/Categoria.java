@@ -9,9 +9,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import com.Mawe.ProjetoIntegrador.model.util.TipoCategoria;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -37,28 +37,48 @@ public class Categoria {
 	 * pensar no enumerated
 	 */
 	@Enumerated (EnumType.STRING)
-	@NotNull (message = "é necessário informar o segmento da empresa correta")
+<<<<<<< HEAD
+=======
+	//@NotNull (message = "é necessário informar o segmento da empresa correta")
+>>>>>>> 98f5e00248528b0aadb38426b075579ce5d77089
 	private TipoCategoria segmentoEmpresa;
 
 	/**
-	 * Valor de material reciclado reutilizado calculado por cubo do produto.
+	 * Tipos de material reciclado que são reutilizados nos produtos.
 	 */
+<<<<<<< HEAD
+=======
 	//@NotNull (message = "é necessário informar o valor de material reutilizado")
-	private Double materialReutilizado;
+>>>>>>> 98f5e00248528b0aadb38426b075579ce5d77089
+	private String materialReutilizado;
 
 	/**
-	 * Valor de materiais biodegradáveis calculado por cubo do produto.
+	 * Quantidade em porcentagem, dos materiais utilizados biodegradáveis e reutilizado.
 	 */
+<<<<<<< HEAD
+=======
 	//@NotNull (message = "é necessário informar o valor de material biodegradavel")
-	private Double materialBiodegradavel;
+>>>>>>> 98f5e00248528b0aadb38426b075579ce5d77089
+	private String materialBiodegradavel;
 	
 	/**
 	 * Lista atributos de Produto
 	 */
 	@OneToMany(mappedBy = "categoria")
-	@JsonIgnoreProperties ({"categoria", "empresaCriadora"})
+	@JsonIgnoreProperties ({"categoria", "empresaCriadora", "produtosCadastrados"})
 	private List<Produto> produto;
 
+	@ManyToOne
+	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 	public List<Produto> getProduto() {
 		return produto;
 	}
@@ -83,19 +103,19 @@ public class Categoria {
 		this.segmentoEmpresa = segmentoEmpresa;
 	}
 
-	public Double getMaterialReutilizado() {
+	public String getMaterialReutilizado() {
 		return materialReutilizado;
 	}
 
-	public void setMaterialReutilizado(Double materialReutilizado) {
+	public void setMaterialReutilizado(String materialReutilizado) {
 		this.materialReutilizado = materialReutilizado;
 	}
 
-	public Double getMaterialBiodegradavel() {
+	public String getMaterialBiodegradavel() {
 		return materialBiodegradavel;
 	}
 
-	public void setMaterialBiodegradavel(Double materialBiodegradavel) {
+	public void setMaterialBiodegradavel(String materialBiodegradavel) {
 		this.materialBiodegradavel = materialBiodegradavel;
 	}
 }

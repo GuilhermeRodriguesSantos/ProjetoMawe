@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -16,12 +16,12 @@ export class AuthService {
 
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('http://localhost:8080/ProjetoMawe/Usuario/Logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>('https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Logar', usuarioLogin)
 
   }
-
+ 
   cadastar(usuario: Usuario) :Observable<Usuario>{
-    return this.http.post<Usuario>('http://localhost:8080/ProjetoMawe/Usuario/Cadastrar', usuario)
+    return this.http.post<Usuario>(' https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
   }
   logado(){
     let ok: boolean = true
@@ -30,6 +30,15 @@ export class AuthService {
       ok = false
     }
     return ok
+  }
+
+  token ={
+    headers: new HttpHeaders().set('Authorization', environment.token)
+ }
+
+
+  getByIdUsuario(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(` https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
   }
 
   loginOff(){
