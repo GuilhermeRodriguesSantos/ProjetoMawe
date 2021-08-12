@@ -11,7 +11,6 @@ export class CasaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    environment.menu = true
   }
 
 }
