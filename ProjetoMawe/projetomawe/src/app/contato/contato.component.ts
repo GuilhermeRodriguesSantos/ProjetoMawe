@@ -12,7 +12,7 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class ContatoComponent implements OnInit {
 
-
+  
   usuario: Usuario = new Usuario
   confirmaAssunto: string
   tipoUsu: string
@@ -24,8 +24,10 @@ export class ContatoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    environment.menu = true
+
     window.scroll(0,0)
-    environment.menu = false
+
   }
 
 
