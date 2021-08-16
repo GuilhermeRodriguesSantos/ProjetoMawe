@@ -6,6 +6,16 @@
     height: 100vh;;
 
 }
+
+
+
+
+.texto-h1{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 .aa{
     width: 290px;
     margin-left: 200px;
@@ -18,14 +28,15 @@
     margin-top: 25%;
 }
 
-.a{
+.labels{
     width:  300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    outline: none;
+   font-style: oblique;
+}
 
+.texto-l{
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ul{
@@ -43,6 +54,7 @@ ul{
 .margin1{
     margin-left: 30px;
 }
+
 
 .fundo2-div{
     background-color: #FBAB7E;  

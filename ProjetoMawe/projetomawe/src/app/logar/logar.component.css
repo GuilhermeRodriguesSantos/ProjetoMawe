@@ -9,12 +9,7 @@
 
 .a{
     width:  300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    outline: none;
-
+    height: 35px;
 }
 
 .tm{
@@ -41,4 +36,10 @@
 
 .menu:hover{
     background-color: rgb(73, 192, 62);
+}
+
+.texto-h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
 }
