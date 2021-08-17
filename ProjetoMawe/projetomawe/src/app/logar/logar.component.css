@@ -2,23 +2,17 @@
     background-color: green;
 }
 
-.espaca{
-    text-align: center;
-    margin-top: 30%;
-}
-
 .a{
     width:  300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    outline: none;
-
+    height: 38px;
+    border-radius: 15px;
+    border: none;
 }
 
 .tm{
-    width: 140px;
+    width: 200px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 .img{
@@ -34,11 +28,26 @@
     background-color: #FBAB7E;  
     background-image: linear-gradient(62deg, #46fc4c 0%, #B9A4BF 100%);
     width: 400px;
-    height: 500px;
+    height: 415px;
     border-radius: 20px;
    
 }
 
+.espaco{
+    margin-top: 70px;
+}
+
+.texto-h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;   
+}
+
 .menu:hover{
     background-color: rgb(73, 192, 62);
+}
+
+.texto-h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    font-weight: bold;
 }

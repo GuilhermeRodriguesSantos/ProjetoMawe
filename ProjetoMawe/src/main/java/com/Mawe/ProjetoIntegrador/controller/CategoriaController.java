@@ -68,7 +68,7 @@ public class CategoriaController {
 	 * @param id, atributo da classe Categoria
 	 * @return para a aplicação: status e info no corpo da requisição
 	 */
-	@GetMapping("/{id}/buscarpeloid") 
+	@GetMapping("buscarpeloid/{id}") 
 	public ResponseEntity<Categoria> buscarPeloId(@PathVariable Long id){
 		return categoriaRepository.findById(id).map(achou-> ResponseEntity.ok(achou)).orElse(ResponseEntity.notFound().build());
 	}
@@ -79,7 +79,7 @@ public class CategoriaController {
 	 * @NomeMétodo deletar
 	 * @param id
 	 */
-	@DeleteMapping("/{id}/deletar")
+	@DeleteMapping("deletar/{id}")
 	public void deletar(@PathVariable Long id) {
 		categoriaRepository.deleteById(id);
 	}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-logar',
@@ -37,13 +38,29 @@ export class LogarComponent implements OnInit {
       console.log(environment.token)
       console.log(environment.endereco)
       
-
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso...',
+        text: 'Usuário logado com sucesso!',
+      })
       this.router.navigate(['/Inicio-empresa'])
 
       
     }, erro => {
-      if(erro.status == 500  || erro.status == 400){
-        alert('Usuario ou senha incoretos, tente novamente!')
+      if(erro.status == 400){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Usuario ou senha incoretos, tente novamente!'
+        })
+      }
+
+      else if(erro.status == 500){
+        Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Você esqueceu de prencher algum campo!'
+        })
       }
     })
   }

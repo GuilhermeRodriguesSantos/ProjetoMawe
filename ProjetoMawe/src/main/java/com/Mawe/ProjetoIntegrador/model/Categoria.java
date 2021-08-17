@@ -37,6 +37,7 @@ public class Categoria {
 	 * pensar no enumerated
 	 */
 
+	@Enumerated (EnumType.STRING)
 	//@NotNull (message = "é necessário informar o segmento da empresa correta")
 	private TipoCategoria segmentoEmpresa;
 
