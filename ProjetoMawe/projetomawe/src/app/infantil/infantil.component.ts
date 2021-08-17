@@ -11,7 +11,6 @@ export class InfantilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
   }
 
 }

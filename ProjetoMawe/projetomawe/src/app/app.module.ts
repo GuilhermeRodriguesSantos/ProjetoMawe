@@ -30,6 +30,8 @@ import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.compon
 import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
 import { DoacaoComponent } from './doacao/doacao.component';
 import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+import { Menu2Component } from './menu2/menu2.component';
+import { Menu3Component } from './menu3/menu3.component';
 
 
 
@@ -60,7 +62,9 @@ import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.componen
     ProdutosEditComponent,
     ProdutosApagarComponent,
     DoacaoComponent,
-    InicioUsuarioComponent
+    InicioUsuarioComponent,
+    Menu2Component,
+    Menu3Component
   ],
   imports: [
     BrowserModule,
