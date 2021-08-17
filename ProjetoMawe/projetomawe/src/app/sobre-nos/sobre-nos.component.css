@@ -91,7 +91,7 @@ body {
 }
 
 .information {
-    color: #9FA8DA;
+    color: rgb(70, 68, 68); 
     font-weight: 500;
     font-size: 16px
 }
