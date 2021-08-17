@@ -21,7 +21,7 @@ export class AuthService {
   }
  
   cadastar(usuario: Usuario) :Observable<Usuario>{
-    return this.http.post<Usuario>(' https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
+    return this.http.post<Usuario>('https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
   }
   logado(){
     let ok: boolean = true
