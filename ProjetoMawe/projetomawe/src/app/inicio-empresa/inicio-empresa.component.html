@@ -1,37 +1,33 @@
 <div class="container-flex">
     <div class=" row cor d-flex align-items-center">
         <div class="col-md-6">
-
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
                     <h1 class="tamanho-texto">Olá, {{usuario.nome}}!</h1>
                     <h5 class="tamanho-texto2">Pronto para Cadastrar seus Segmentos e Produtos?</h5>
-
                 </div>
             </div>
-
             <div class="row d-flex justify-content-center mt-3 mb-5">
                 <div class="col-md-6">
                     <button class="btn btn-light text-btn" data-bs-toggle="modal" data-bs-target="#NovoProduto">Novo Produto</button>
                     <a class="btn btn-outline-light dit" href="#Produtos"> Ver Produtos</a>
                 </div>
             </div>
-
         </div>
         <div class="col-md-6 d-flex justify-content-center">
 
             <img src="../../assets/img/Início/Environment-bro (1).png" alt="" width="500px">
-
         </div>
     </div>
 </div>
 
 
+        
 
 <div class="container mt-5 mb-5" id="Produtos">
     <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
-
+           
             <button class="nav-link active text-secondary font-weight-bold" id="nav-TodosProdutos-tab" data-bs-toggle="tab" data-bs-target="#nav-TodosProdutos" type="button" role="tab" aria-controls="nav-TodosProdutos" aria-selected="true">Todos os Produtos</button>
 
             <button (click)="findByIdUsuario()" class="nav-link text-secondary font-weight-bold" id="nav-MeusProdutos>-tab" data-bs-toggle="tab" data-bs-target="#nav-MeusProdutos" type="button" role="tab" aria-controls="nav-MeusProdutos" aria-selected="false">Meus Produtos</button>
@@ -148,4 +144,7 @@
             </div>
         </div>
     </div>
+    
 </div>
+
+
