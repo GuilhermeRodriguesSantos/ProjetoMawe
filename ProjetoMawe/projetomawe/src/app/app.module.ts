@@ -13,7 +13,6 @@ import { HomeComponent } from './home/home.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CasaComponent } from './casa/casa.component';
@@ -30,6 +29,9 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
 import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
 import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
 import { DoacaoComponent } from './doacao/doacao.component';
+import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
+import { Menu2Component } from './menu2/menu2.component';
+import { Menu3Component } from './menu3/menu3.component';
 
 
 
@@ -44,7 +46,6 @@ import { DoacaoComponent } from './doacao/doacao.component';
     HomeComponent,
     LogarComponent,
     CadastrarComponent,
-    InicioComponent,
     CategoriaComponent,
     ProdutoComponent,
     CasaComponent,
@@ -60,7 +61,10 @@ import { DoacaoComponent } from './doacao/doacao.component';
     CategoriaDeleteComponent,
     ProdutosEditComponent,
     ProdutosApagarComponent,
-    DoacaoComponent
+    DoacaoComponent,
+    InicioUsuarioComponent,
+    Menu2Component,
+    Menu3Component
   ],
   imports: [
     BrowserModule,

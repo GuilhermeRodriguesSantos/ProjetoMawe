@@ -33,12 +33,7 @@ export class InicioEmpresaComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  ngOnInit() {
-
-
-
-    environment.menu = true
-    
+  ngOnInit() {    
     if(environment.token == ''){
       alert('Sua sessão expirou, por favor se logue novamente!')
       this.router.navigate(['/Logar'])

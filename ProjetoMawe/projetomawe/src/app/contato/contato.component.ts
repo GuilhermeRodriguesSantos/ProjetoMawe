@@ -24,10 +24,7 @@ export class ContatoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    environment.menu = true
-
     window.scroll(0,0)
-
   }
 
 

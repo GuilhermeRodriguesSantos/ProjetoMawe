@@ -11,7 +11,7 @@ export class CosmeticosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
-    environment.menu = true
+  
   }
 
 }

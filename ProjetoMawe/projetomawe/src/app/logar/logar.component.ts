@@ -31,6 +31,7 @@ export class LogarComponent implements OnInit {
       environment.id = this.usuarioLogin.id
       environment.nome = this.usuarioLogin.nome
       environment.token = this.usuarioLogin.token
+      environment.tipoUsuario = this.usuarioLogin.tipoUsuario
       environment.endereco
 
       console.log(environment.id)
@@ -43,7 +44,13 @@ export class LogarComponent implements OnInit {
         title: 'Sucesso...',
         text: 'Usuário logado com sucesso!',
       })
-      this.router.navigate(['/Inicio-empresa'])
+    
+
+      if(environment.tipoUsuario == "EMPRESA"){
+          this.router.navigate(['/Inicio-empresa'])
+      }else if(environment.tipoUsuario == "USUARIO"){
+          this.router.navigate(['/inicio-usuario'])
+      }
 
       
     }, erro => {
