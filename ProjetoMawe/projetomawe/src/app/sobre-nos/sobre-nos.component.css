@@ -1,13 +1,91 @@
+.item-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.m-l {
+    margin-left: 10px;   
+}
+.m-l-20 {
+    margin-left: 20px;   
+}
+.font-18{
+    font-size: 18px;
+}
+.pd {
+    padding-bottom: 10px;
+    justify-content: justify
+}
+.espa-line {
+    line-height: 27px;
+}
+
+.item-none {
+    text-decoration: none;
+    list-style: none;
+}
+
 .txt {
     text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: var(--bs-font-sans-serif), Arial, Helvetica, sans-serif;
+}
+
+.axeltamanho {
+    height: 300px;
+    width: 280px;
+    transition: 1s;
+    vertical-align:top;
+}
+
+.axeltamanho:hover {
+    height: 320px;
+    width: 300px;
+}
+
+.m-l-30 {
+    margin-left: 30px;
+}
+
+.m-r-30 {
+    margin-right: 30px;
+}
+
+.mb-70 {
+    margin-bottom: 70px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.mt-do-circulo {
+    margin-top: 120px;
+}
+
+.img-circulo{
+    border-radius:250px;
+    box-shadow: 350px 0px 0px 50px rgba(221, 193, 192, 0.4);  
+}
+
+.img-circular-fundo {
+    border-radius:400px;
+}
+
+.img-circular-axel {
+    border-radius:250px;
+}
+
+/* Códigos antigos */
+.img-centro{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .img-border {
     border-radius: 15px;
     width: 230px;
     height: 350px;
-    
+
 }
 
 .texto {
@@ -21,6 +99,27 @@
 .espaçamento{
     padding: 20px;
     margin-left: 50px;   
+}
+.card {
+    opacity: 0.5;
+}
+
+.card:hover{
+    opacity: 1.0;
+}
+
+.botao-verde{
+    color: rgb(109, 109, 109);
+    background-image:linear-gradient (rgb(255, 255, 255));
+    border-color: rgb(152, 170, 146);
+}
+
+.card:hover .botao-verde{
+    color: white;
+    transition: 500ms;
+    border-color:none;
+    background-image: linear-gradient(rgb(61, 119, 44), rgb(45,89,32));
+    
 }
 
 .img:hover{
