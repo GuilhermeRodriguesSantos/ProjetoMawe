@@ -77,12 +77,7 @@ public class Usuario {
 	 * Este parâmetro, que descende da tabela
 	 Produto, relaciona um usuário que poderá cadastrar muitos produtos
 	 */
-<<<<<<< HEAD
-	@JsonIgnoreProperties ({"empresaCriadora", "categoria"})
-=======
-	//alterado
-	
->>>>>>> 98f5e00248528b0aadb38426b075579ce5d77089
+
 	@OneToMany (mappedBy = "empresaCriadora")
 	@JsonIgnoreProperties ({"empresaCriadora", "categoria", "produtosCadastrados"})
 	private List<Produto> produtosCadastrados;

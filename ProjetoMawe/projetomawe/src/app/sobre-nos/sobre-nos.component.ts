@@ -11,7 +11,6 @@ export class SobreNosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
   }
 
 }

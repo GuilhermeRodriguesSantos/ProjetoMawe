@@ -45,7 +45,12 @@ public class UsuarioController {
 	 */
 	@PostMapping("Cadastrar")
 	public ResponseEntity<Object> CadastrarUsuario(@RequestBody @Valid Usuario novoUsuario) {
-		return ResponseEntity.status(201).body(service.CadastrarUsuario(novoUsuario));
+		Optional<Object> produto = service.CadastrarUsuario(novoUsuario);
+		if (produto.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		} else {
+			return ResponseEntity.status(201).body(service.CadastrarUsuario(novoUsuario));
+		}
 	}
 	
 	/**

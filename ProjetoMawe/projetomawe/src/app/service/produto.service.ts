@@ -37,7 +37,7 @@ export class ProdutoService {
     }
 
     deleteProduto(id: number){
-      return this.http.delete(`https://ecomawe.herokuapp.com/produto/delete/${id}`, this.token)
+      return this.http.delete(`https://ecomawe.herokuapp.com/produto/delete/${id}`)
     }
 }
     

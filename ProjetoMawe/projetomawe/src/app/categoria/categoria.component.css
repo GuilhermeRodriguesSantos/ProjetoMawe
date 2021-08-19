@@ -5,3 +5,101 @@
 .fs-18 {
     font-size: 18pt;
 }
+
+.font-t{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.font-j{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.direita{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.estilo-imp{
+    font-style: oblique;
+    color: black;
+    width: 315px;
+    height: 45px;
+    border-radius: 20px;  
+}
+
+
+
+.bt{
+    width: 250px;
+    border-radius: 20px;
+   font-style: oblique;
+    font-weight: bold;
+}
+
+
+.texto-label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+.color-back {
+    background-color: #93d4a5;
+}
+
+.mm{
+    margin-left: 20px;
+}
+.menu:hover{
+    background-color: #3b5998;
+}
+
+.menu2:hover{
+    background-color: #a10a2b;
+}
+
+.mat:hover{
+    background-color: #2a6d03;
+
+}
+
+.cor-j{
+    background-color: rgb(155, 155, 155);
+    height: 200px;
+}
+
+.borda-2:hover{
+    background-color: rgb(212, 212, 252);
+}
+
+.foto{
+    margin-left: 120px;
+}
+.estilo-cor:hover{
+    background-color: white;
+    color: black;
+}
+
+.cores{
+    background-color: black;
+    color: white;
+}
+
+.borda{
+    border: 1px solid white;
+}
+
+
+.btn-est{
+    width: 100px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.bt-direita{
+    margin-left: 20px;
+}

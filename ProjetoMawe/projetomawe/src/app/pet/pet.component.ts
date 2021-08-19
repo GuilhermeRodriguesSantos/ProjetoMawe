@@ -11,7 +11,6 @@ export class PetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
   }
 
 }
