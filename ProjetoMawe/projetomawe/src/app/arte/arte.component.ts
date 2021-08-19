@@ -14,10 +14,6 @@ export class ArteComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-
-    if(environment.token == ''){
-      this.router.navigate(['/Logar'])
-    }
   }
 
 }

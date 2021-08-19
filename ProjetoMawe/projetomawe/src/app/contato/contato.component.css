@@ -11,16 +11,14 @@
     height:100px;
     border:solid 3px;
     border-radius:20px;
-
-
   }
 
   .fundo2-div{
     background-color: #FBAB7E;  
     background-image: linear-gradient(62deg, #46fc4c 0%, #B9A4BF 100%);
     width: 500px;
-    height: 600px;
-    border-radius: 20px;
+    height: 530px;
+    border-radius: 40px;
    
 }
 
@@ -30,4 +28,40 @@
 
 .menu2:hover{
   background-color: #a10a2b;
+}
+
+
+.texto-1{
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+.texto{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn-form{
+  width: 130px;
+  height: 43px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.txt-imp{
+  width: 320px;
+  font-style: oblique;
+  border: none;
+  border-radius: 20px;
+  height: 37px;
+}
+
+.mg-lf{
+  margin-left: 15px;
 }

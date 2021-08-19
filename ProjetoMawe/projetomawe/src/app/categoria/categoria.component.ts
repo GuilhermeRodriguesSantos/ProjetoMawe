@@ -5,6 +5,7 @@ import { Categoria } from '../model/Categoria';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria',
@@ -58,10 +59,23 @@ export class CategoriaComponent implements OnInit {
     this.categoria.segmentoEmpresa = this.Segmento
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria=resp
-      alert('Categoria cadastrada com sucesso!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso...',
+        text: 'Segmetno cadastrado com sucesso!',
+      })
+    
       this.findAllCategorias()
       this.categoria= new Categoria()
       
+    }, erro => {
+      if(erro.status == 400 || erro.status == 500){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Escreva os campos corretamente e, tente novamente!'
+          })
+      }
     })
   }
 

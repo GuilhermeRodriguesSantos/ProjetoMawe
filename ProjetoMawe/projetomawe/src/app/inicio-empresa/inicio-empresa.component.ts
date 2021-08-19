@@ -7,6 +7,7 @@ import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio-empresa',
@@ -35,7 +36,11 @@ export class InicioEmpresaComponent implements OnInit {
 
   ngOnInit() {    
     if(environment.token == ''){
-      alert('Sua sessão expirou, por favor se logue novamente!')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Sua sessão foi encerada, Logue-se Novamente!'
+      })
       this.router.navigate(['/Logar'])
     }
       
