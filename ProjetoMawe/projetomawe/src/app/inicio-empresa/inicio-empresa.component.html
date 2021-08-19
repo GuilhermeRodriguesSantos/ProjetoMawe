@@ -35,7 +35,7 @@
         </div>
 
     </nav>
-    <div class="tab-content mt-3 mb-5" id="nav-tabContent">
+    <div class="tab-content mt-3 mb-3" id="nav-tabContent">
         <div class="tab-pane fade show active " id="nav-TodosProdutos" role="tabpanel" aria-labelledby="nav-TodosProdutos-tab">
 
             <!-- Card Todos Produtos-->
@@ -80,7 +80,7 @@
         <div class="tab-pane fade" id="nav-MeusProdutos" role="tabpanel" aria-labelledby="nav-MeusProdutos-tab">
 
             <!-- Card Meus Produtos-->
-            <div class="container mt-3 mb-3">
+            <div class="container">
                 <div class="d-flex justify-content-center row" *ngFor='let produto of usuario.produtosCadastrados'>
                     <div class="col-md-10">
                         <div class="row d-flex p-2 bg-white border rounded mt-3 align-items-center justify-content-center">
@@ -94,6 +94,7 @@
                             <div class="align-items-center align-content-center justify-content-center col-md-3 mt-4 mb-4 bor">
 
                                 <h4 class="mr-1">R$ {{produto.preco}}</h4>
+
 
                                 <h6 class="text-success">Em estoque</h6>
                                 <div class="d-flex flex-column mt-4"><button [routerLink]="['/produtoed', produto.id]" class="btn btn-primary btn-sm" type="button">Editar</button><button [routerLink]="['/produtodl', produto.id]" class="btn btn-outline-danger btn-sm mt-2" type="button">Excluir</button></div>
@@ -115,7 +116,7 @@
     <!-- Modal -->
     <div class="modal fade" id="NovoProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog st-in">
-            <div class="modal-content bkc">
+            <div class="modal-content">
                 <div class="modal-header bkc text-light">
                     <h4 class="modal-title" id="staticBackdropLabel">Novo Produto</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -141,7 +142,7 @@
 
 
                     <div class="form-group">
-                        <label for="descricao">descricao</label>
+                        <label for="descricao">Descrição</label>
                         <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descreva o produto">
                     </div>
 
@@ -151,7 +152,7 @@
                         <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Insira o link da imagem do produto">
                     </div>
 
-                    <div class="form-group bkc">
+                    <div class="form-group">
                         <label for="Categoria">Escolha um Segmento ou | <a data-bs-dismiss="modal" routerLink="/categoria">Cadastre um novo</a></label>
                         <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
                 <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.segmentoEmpresa}}</option>

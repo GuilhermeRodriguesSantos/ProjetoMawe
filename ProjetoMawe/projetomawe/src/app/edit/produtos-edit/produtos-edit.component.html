@@ -1,58 +1,60 @@
 <div class="container-flex mb-5 mt-5">
 
-<div class="row">
-    <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
 
-        <h1 class="text-center text-secondary">Atualizar Produto</h1>
+            <h1 class="text-center mt-4 mb-4">Atualizar Produto</h1>
+        </div>
     </div>
-</div>
+
+    <!--Inputs Para Alterar Produto-->
 
 
     <div class="row d-flex justify-content-center">
 
         <div class="col-md-6">
 
-            <div class="form-group">
+            <div class="form-group mt-3 mb-3">
                 <label for="Nome">Nome</label>
-                <input [(ngModel)]='Produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o Nome:">
-              </div>
-    
-              
-              <div class="form-group">
-                <label for="preco">Preço</label>
-                <input [(ngModel)]='Produto.preco'type="number" class="form-control" id="preco" placeholder="Digite o Preço:" >
-              </div>
-    
-              
-              <div class="form-group">
-                <label for="Quantidade">Quantidade</label>
-                <input [(ngModel)]='Produto.quantidade' type="number" class="form-control" id="Quantidade" placeholder="Digite a Quantidade:" >
-              </div>
-    
-              
-              <div class="form-group">
-                <label for="descricao">descricao</label>
-                <input [(ngModel)]='Produto.descricao'type="text" class="form-control" id="descricao" placeholder="Digite a Descrição:" >
-              </div>
-    
-              
-              <div class="form-group">
-                <label for="url">Url</label>
-                <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Digite a Url:" >
-              </div>
+                <input [(ngModel)]='Produto.nome' type="text" class="form-control" id="nome" placeholder="Nomeie o Produto">
+            </div>
 
-              <div class="form-group">
-                <label for="Categoria">Escolha um Segmento ou | <a  routerLink="/categoria">Cadastre-se um novo</a>:</label>
-                <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change) = 'findByIdCategoria()'>
+
+            <div class="form-group mt-3 mb-3">
+                <label for="preco">Preço</label>
+                <input [(ngModel)]='Produto.preco' type="number" class="form-control" id="preco" placeholder="Digite o valor do produto">
+            </div>
+
+
+            <div class="form-group mt-3 mb-3">
+                <label for="Quantidade">Quantidade</label>
+                <input [(ngModel)]='Produto.quantidade' type="number" class="form-control" id="Quantidade" placeholder="Insira a quantidade do produto">
+            </div>
+
+
+            <div class="form-group mt-3 mb-3">
+                <label for="descricao">Descrição</label>
+                <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descreva o produto">
+            </div>
+
+
+            <div class="form-group mt-3 mb-3">
+                <label for="url">Url</label>
+                <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Insira o link da imagem do produto">
+            </div>
+
+            <div class="form-group mt-3 mb-3">
+                <label for="Categoria">Escolha um Segmento ou | <a  routerLink="/categoria">Cadastre um novo</a>:</label>
+                <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
                     <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.segmentoEmpresa}}</option>
                 </select>
-              </div>
+            </div>
 
-              <div class="d-flex justify-content-center">
-                  <button class="btn btn-danger" routerLink='/Inicio-empresa'>Cancelar</button>
-                  <button class="btn btn-success espaco" (click)='atualizar()'>Atualizar</button>
+            <div class="d-flex justify-content-center mt-4 mb-4">
+                <button class="btn btn-danger btn-est btn-lg" routerLink='/Inicio-empresa'>Cancelar</button>
+                <button class="btn btn-success espaco btn-est" (click)='atualizar()'>Atualizar</button>
 
-              </div>
+            </div>
 
         </div>
     </div>
