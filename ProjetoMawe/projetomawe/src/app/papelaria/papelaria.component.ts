@@ -11,7 +11,7 @@ export class PapelariaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
+
   }
 
 }

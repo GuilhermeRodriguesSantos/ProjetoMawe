@@ -1,0 +1,84 @@
+.cor-div{
+    background: rgb(19,10,3);
+    background: linear-gradient(90deg, rgba(19,10,3,1) 0%, rgba(0,0,0,1) 35%, rgba(110,96,87,1) 100%);
+    height: 54px;
+    
+}
+
+
+.lista li a:hover{
+    color: white;
+}
+
+.lista{
+    display: flex;
+
+}
+
+.font-texto{
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+li{
+    list-style: none;
+    padding: 10px;
+   
+}
+
+.fa-users{
+    font-size: 25px;
+}
+
+.fa-phone{
+    font-size: 25px;
+}
+
+.fa-user{
+    font-size: 25px;
+}
+
+.fa-id-card{
+    font-size: 25px;
+}
+
+.fas{
+    font-size: 25px;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.tm{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tm-itens{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tm-itens:hover{
+    color: black;
+}
+
+.botao:hover{
+   
+    background-color:rgb(235, 58, 27);
+        color: white;
+        font-weight: bold;
+        size: 200px;
+        
+        
+}
+.botao2{
+    
+    color: white;
+   
+}
+

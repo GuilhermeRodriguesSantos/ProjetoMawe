@@ -11,7 +11,6 @@ export class ModaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
   }
 
 }

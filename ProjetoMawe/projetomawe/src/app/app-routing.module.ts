@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CasaComponent } from './casa/casa.component';
@@ -22,6 +21,7 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
 import { ProdutosApagarComponent } from './delete/produtos-apagar/produtos-apagar.component';
+import { InicioUsuarioComponent } from './inicio-usuario/inicio-usuario.component';
 
 
 const routes: Routes = [
@@ -31,7 +31,6 @@ const routes: Routes = [
   {path:"sobre-nos", component:SobreNosComponent },
   {path: "Logar" , component: LogarComponent},
   {path: "Cadastrar", component: CadastrarComponent},
-  {path: "Inicio", component: InicioComponent},
   {path: 'categoria', component: CategoriaComponent},
   {path: "Produto", component: ProdutoComponent},
   {path: "casa", component: CasaComponent},
@@ -47,7 +46,8 @@ const routes: Routes = [
   {path: "Deletar/:id", component: CategoriaDeleteComponent},
   {path: "produtoed/:id", component: ProdutosEditComponent},
   {path: "produtodl/:id", component:ProdutosApagarComponent  },
-  {path: "doacao", component: DoacaoComponent}
+  {path: "doacao", component: DoacaoComponent},
+  {path: "inicio-usuario", component: InicioUsuarioComponent}
 
 
 ];

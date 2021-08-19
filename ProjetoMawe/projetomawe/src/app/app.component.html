@@ -1,4 +1,6 @@
-<app-menu *ngIf='auth.loginOff()'></app-menu>
+<app-menu *ngIf='auth.logado()'></app-menu>
+<app-menu2 *ngIf='auth.logado2()'></app-menu2>
+<app-menu3 *ngIf='auth.logado3()'></app-menu3>
 <router-outlet></router-outlet>
-<app-rodape *ngIf='auth.loginOff()'></app-rodape>
+<app-rodape></app-rodape>
 

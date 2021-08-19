@@ -6,6 +6,19 @@
     height: 100vh;;
 
 }
+
+
+.texto-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.texto-h1{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 .aa{
     width: 290px;
     margin-left: 200px;
@@ -18,14 +31,24 @@
     margin-top: 25%;
 }
 
-.a{
+.labels{
     width:  300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    outline: none;
+    border-radius: 10px;
+    padding: 4px;
+    border: none;
+   font-style: oblique;
 
+}
+
+.texto-o{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.texto-l{
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ul{
@@ -33,7 +56,8 @@ ul{
 }
 
 .tm{
-    width: 130px;
+    width: 200px;
+    height: 40px;
 }
 
 .mr{
@@ -44,11 +68,12 @@ ul{
     margin-left: 30px;
 }
 
+
 .fundo2-div{
     background-color: #FBAB7E;  
     background-image: linear-gradient(62deg, #46fc4c 0%, #B9A4BF 100%);
     width: 400px;
-    height: 500px;
+    height: 495px;
     border-radius: 20px;
    
 }
@@ -60,3 +85,8 @@ ul{
 .menu2:hover{
     background-color: rgb(46, 174, 184);
 }
+
+.menu{
+    border-radius: 20px;
+}
+

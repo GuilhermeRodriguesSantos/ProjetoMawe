@@ -11,7 +11,6 @@ export class SaudeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    environment.menu = true
   }
 
 }

@@ -1,65 +1,62 @@
 <div class="col-md-6 img p-5">
     <div class="row d-flex justify-content-center">
-
-        <a routerLink="/home" class="text-white text-left">
-            <i class="fas fa-angle-double-right"></i> Home
-        </a>
-
         <div class="fundo2-div">
-            <h1 class="d-flex margin mt-5 justify-content-center">Cadastrar</h1>
+            <h1 class="d-flex margin mt-4 justify-content-center texto-h1">Cadastre-se</h1>
 
             <div>
                 <div class="d-flex justify-content-center ">
-                    <input [(ngModel)]='usuario.nome' class="mt-3 mb-3 a " type="text" name="nome" id="nome" placeholder="Digite se nome:">
+                    <input [(ngModel)]='usuario.nome' class="mt-3 mb-3  labels " type="text" name="nome" id="nome" placeholder="Digite o seu Nome:">
                 </div>
 
 
                 <div class="d-flex justify-content-center">
-                    <input [(ngModel)]='usuario.email' class="mb-3 a" type="email" name="email" id="email" placeholder="Digite o seu email:">
+                    <input [(ngModel)]='usuario.email' class="mb-3  labels" type="email" name="email" id="email" placeholder="Digite o seu E-mail:">
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <input [(ngModel)]='usuario.endereco' class="mb-3 a" type="text" name="endereco" id="endereco" placeholder="Digite seu endereço:">
+                    <input [(ngModel)]='usuario.endereco' class="mb-3  labels" type="text" name="endereco" id="endereco" placeholder="Digite o seu Endereço:">
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <input (input)='confirmSenha($event)' class="mb-3 a" type="password" name="senha" id="senha" placeholder="Digite sua senha:">
+                    <input (input)='confirmSenha($event)' class="mb-3  labels" type="password" name="senha" id="senha" placeholder="Digite a sua Senha:">
                 </div>
 
 
                 <div class="d-flex justify-content-center">
                     <div>
-                        <input [(ngModel)]='usuario.senha' class="mb-3 a" type="password" name="senhac" id="senhac" placeholder="Confirme sua senha:">
+                        <input [(ngModel)]='usuario.senha' class="mb-3  labels" type="password" name="senhac" id="senhac" placeholder="Confirme a sua Senha:">
 
                     </div>
 
                 </div>
                 <div class="d-flex justify-content-center ">
                     <div>
-                        <label for="Usuario" class="d-flex justify-content-center">Tipo de Usuario:</label>
-                        <select class="form-control aa d-flex align-self-center" style="margin-right: 195px;" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
+                        <label for="Usuario" class="d-flex justify-content-center texto-l">Tipo de Usuario:</label>
+                        <select class="form-control aa d-flex align-self-center labels" style="margin-right: 195px;" name="tipo" id="tipo" (change)='tipoUsuario($event)'>
                         <option>Selecione seu tipo de Usuario</option>
-                        <option value="EMPRESA">EMPRESA</option>
-                        <option value="USUARIO">USUARIO</option>
+                        <option class="texto-o" value="EMPRESA">EMPRESA</option>
+                        <option class="texto-o" value="USUARIO">USUARIO</option>
                     </select>
                     </div>
-
-
-
-
-
                 </div>
             </div>
 
-
-
-            <div>
-                <ul class="d-flex justify-content-center p-2">
-                    <li><button type="button" class="btn btn-primary mb-4 tm mr menu fw-bold" (click)='cadastrar()'>Cadastrar</button></li>
-                    <li><button type="button" class="btn btn-primary mb-4  tm menu2" routerLink='/Logar'> Logar</button>
-                    </li>
+            <div class="d-flex justify-content-center p-2">
+                <ul class="p-2">
+                    <li><button type="button" class="btn btn-outline-success mb-4 tm  menu fw-bold" (click)='cadastrar()'>Cadastrar</button></li>
                 </ul>
             </div>
+
         </div>
+        
+
+        <div class="mt-3 text-center">
+            <p class="texto-h2">Se caso já tiver uma conta | <a routerLink="/Logar">Logue-se</a></p>
+        </div>
+
     </div>
 </div>
+
+<script src="sweetalert2.all.min.js"></script>
+
+
