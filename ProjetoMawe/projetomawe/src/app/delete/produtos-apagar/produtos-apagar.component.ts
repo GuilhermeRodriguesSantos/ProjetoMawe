@@ -5,7 +5,6 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from 'src/app/model/Usuario';
-import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-produtos-apagar',
@@ -18,15 +17,12 @@ export class ProdutosApagarComponent implements OnInit {
   idProduto:number
   listaProdutos: produto[]
   usuario: Usuario = new Usuario()
-  usuarioo: Usuario[]
-  idusuario = environment.id
 
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService,
-    private authService: AuthService
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit(){
@@ -35,7 +31,6 @@ export class ProdutosApagarComponent implements OnInit {
     }
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdCategoria(this.idProduto)
-    this.getAllProduto()
     
   }
   getAllProduto(){
@@ -43,14 +38,6 @@ export class ProdutosApagarComponent implements OnInit {
         this.listaProdutos = resp
   
     })
-  }
-  findByIdUsuario(){
-    this.authService.getByIdUsuario(this.idusuario).subscribe((resp: Usuario) => {
-      this.usuario = resp
-      console.log(this.usuario)
-  
-    })
-  
   }
 
 
