@@ -67,6 +67,7 @@ export class LogarComponent implements OnInit {
           icon: 'warning',
           title: 'Oops...',
           text: 'Você esqueceu de prencher algum campo!'
+          
         })
       }
     })

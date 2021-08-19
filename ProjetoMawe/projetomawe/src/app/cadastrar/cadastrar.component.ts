@@ -39,13 +39,14 @@ export class CadastrarComponent implements OnInit {
     this.usuario.tipoUsuario = this.tipoUsu
 
     if(this.usuario.senha != this.confirmaSenha){
-    //alert('As senhas digitadas estão incoretas')
+    //alert('As senhas digitadas estão incorretas')
     Swal.fire({
       icon: 'warning',
       title: 'Oops...',
       text: 'Usuário ou senha estão incorretos!',
     })
     }
+
     
     else{
     this.auth.cadastar(this.usuario).subscribe((resp: Usuario) => {
