@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contato',
@@ -27,9 +28,12 @@ export class ContatoComponent implements OnInit {
     window.scroll(0,0)
   }
 
-
   enviar(){
-    alert ("Mensagem enviada com sucesso!")
+    Swal.fire({
+      icon: 'success',
+      title: 'Sucesso...',
+      text: 'Menssagem envida sucesso!',
+    })
   }
 }
 
