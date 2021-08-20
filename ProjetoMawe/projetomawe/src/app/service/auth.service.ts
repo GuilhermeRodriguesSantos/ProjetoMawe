@@ -38,7 +38,7 @@ export class AuthService {
 
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(` https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
+    return this.http.get<Usuario>(`https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
   }
 
   logado2(){

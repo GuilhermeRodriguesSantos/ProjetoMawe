@@ -1,3 +1,79 @@
-.espaco{
+/* Inputs*/
+
+.espaco {
     margin-left: 10px;
+}
+
+.form-group label {
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+a {
+    text-decoration: none !important
+}
+
+.form-group input {
+    border-radius: 30px;
+}
+
+.form-group select {
+    border-radius: 30px;
+}
+
+.form-group option {
+    border-radius: 30px;
+}
+
+.form-group {
+    margin-top: 4px;
+    margin: bottom 4px;
+}
+
+
+/* Card e Botões*/
+
+.btn-est {
+    width: 200px;
+    height: 50;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.bor {
+    height: 200px;
+    border-left: 2px solid;
+    border-left-color: #afaeae;
+}
+
+.ratings {
+    font-size: 16px;
+    font-style: italic;
+    text-justify: center;
+}
+
+.product-image {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: #74b486;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+.para {
+    font-size: 16px
 }

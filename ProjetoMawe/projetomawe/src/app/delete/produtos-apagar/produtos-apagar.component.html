@@ -1,44 +1,54 @@
-<div class="container-flex">
+<div class="container-flex mt-4 mb-4">
 
     <div class="row">
         <div class="col-md-12">
 
-            <h1 class="text-center text-secondary"> Deletar Produto</h1>
+            <h1 class="text-center mt-4 mb-4"> Deletar Produto</h1>
         </div>
     </div>
 
 
     <div class="row">
         <div class="col-md-12">
-            <h4 class="text-center text-secondary">Voce tem certeza que deseja apagar o Produto</h4>
+            <h4 class="text-center text-danger mt-4 mb-4">Tem certeza que deseja apagar o Produto?</h4>
         </div>
     </div>
 
-
+    <!--Card-->
     <div class="row d-flex justify-content-center">
-    <div class="col-md-4">
-        
-        <div class="card-group">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">{{Produto.nome}} </p>
-                <p class="card-text">{{Produto.preco}} </p>
-                <p class="card-text">{{Produto.descricao}} </p>
-                <p class="card-text">{{Produto.quantidade}} </p>
-                <p class="card-text">{{Produto.url}} </p>
+        <div class="col-md-10">
+            <div class="row d-flex p-2 bg-white border rounded mt-3 align-items-center justify-content-center">
 
-               </div>
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src={{Produto.url}}></div>
+                <div class="col-md-6 mt-4 mb-4">
+                    <h4>{{Produto.nome}}</h4>
+                    <div class="ratings mt-3 mb-3">{{Produto.descricao}}</div>
+                    <div class="mt-1 mb-1 spec-1"><span class="dot"></span><span>Código: {{Produto.id}}</span><span class="dot"></span><span>Quantidade: {{Produto.quantidade}}</span><span class="dot"></span></div>
+
+                </div>
+                <div class="align-items-center align-content-center justify-content-center col-md-3 mt-4 mb-4 bor">
+
+                    <h4 class="mr-1 mt-4">R$ {{Produto.preco}}</h4>
+                    <h6 class="text-success">Em estoque</h6>
+
+                    <div class="mt-3 mb-3">
+
+                        <h6 class="text-secondary">Categoria: {{Produto.categoria.segmentoEmpresa}}</h6>
+                        <h6 class="text-secondary">Cadastrado por: <i>{{Produto.empresaCriadora.nome}}</i> </h6>
+                    </div>
+
+
+                </div>
             </div>
-          </div>
+        </div>
     </div>
-</div>
+    <!--/Card-->
 
 
-    <div class="row mt-5">
+    <div class="row mt-4 mb-5">
         <div class="col-md-12 d-flex justify-content-center">
-            <button class="btn btn-danger" routerLink='Inicio-Empresa'>Não</button>
-            <button class="btn btn-success" (click)='apagar()'>Sim</button>
+            <button class="btn btn-success btn-est btn-lg" routerLink='/Inicio-empresa'>Não</button>
+            <button class="btn btn-outline-danger btn-est espaco btn-lg" (click)='apagar()'>Sim</button>
 
         </div>
 
