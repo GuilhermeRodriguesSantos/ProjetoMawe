@@ -1,20 +1,22 @@
 <div class="container-fluid">
 
     <div class="row color-back text-white d-flex justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
 
-            <a routerLink="/Inicio-empresa" class="text-white text-left">
-                <i class="fas fa-angle-double-right"></i> Home
-            </a>
-
-            <h1 class="fs-54 text-center">Materiais</h1>
-            <h5 class="fs-18 text-center">Veja aqui todos segmentos cadastrados ou Cadastre um novo:</h5>
-
-
+            <h1 class="fs-54 text-center font-t mb-3 mt-4">Segmentos:</h1>
+            <h5 class="fs-18 text-center font-t">Veja aqui todos os segmentos cadastrados ou Cadastre um novo:</h5>
+        </div>
+        
+        
             <div class="row d-flex justify-content-center mt-4 mb-5">
                 <div class="col-md-3">
-                    <div class="form-group">
-                        <select class="form-control" name="Segmento" id="Segmento" (change)='seguimento($event)'>
+                    <div class="form-group mb-3">
+                        <div class="d-flex align-items-center">
+                        <label class="texto-label" for="Segmento">Escolha o Segmemto: </label>
+                        <img src="../../assets/img/icones_segmentos/escolhendo.png" class="direita" width="40px" alt="">
+                        </div>
+                        <select class="form-control estilo-imp" name="Segmento" id="Segmento" (change)='seguimento($event)'>
+                            <option>Segmentos:</option>
                            <option value="AlimentosEBebidas">AlimentosEBebidas</option>
                            <option value="AutomoveisEVeiculos">AutomoveisEVeiculos</option>
                            <option value="BebesECia">BebesECia</option>
@@ -34,73 +36,75 @@
                     </div>
 
                     <div class="form-group">
-                        <input [(ngModel)]='categoria.materialReutilizado' type="text" class="form-control mb-3 mt-3" value="materialReutilizado" placeholder=" % do tipo de material Reutilizado">
+                    <div class="d-flex align-items-center">
+                        <label class="texto-label" for="materialReutilizado">Digite a % de Material Reutilizável:</label>
+                        <img src="../../assets/img/icones_segmentos/empresario-com-sinal-de-porcentagem.png" width="30px" class="direita" alt="">
+                    </div>
+                        <input [(ngModel)]='categoria.materialReutilizado' type="text" class="form-control mb-3 estilo-imp" value="materialReutilizado" placeholder=" % do tipo de material Reutilizável">
                     </div>
 
                     <div class="form-group">
-                        <input [(ngModel)]='categoria.materialBiodegradavel' type="text" class="form-control" value="materialBiodegradavel" placeholder="% do tipo de material Biodegradavel">
+                        <div class="d-flex align-items-center">
+                            <label class="texto-label" for="materialBiodegradavel">Digite a % de Material Biodegradável:</label>
+                            <img src="../../assets/img/icones_segmentos/empresario-com-sinal-de-porcentagem.png" width="30px" class="direita" alt="">
+                        </div>
+                        <input [(ngModel)]='categoria.materialBiodegradavel' type="text" class="form-control estilo-imp" value="materialBiodegradavel" placeholder="% do tipo de material Biodegradável">
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-light mat" (click)='cadastrar()'>Cadastrar</button>
+                        <button class="btn btn-outline-light bt" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
                 </div>
 
             </div>
-
-        </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row mt-5 d-flex justify-content-center">
+<div class="container-flex">
+    <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center">Todos os Segmentos</h2>
+            <div class="jumbotron jumbotron-fluid cor-j mb-4">
+                  <h1 class="display-4 text-center font-j">Visualize seus Segmentos</h1>
+                  <p class="lea text-center font-j">Aqui você pode verificar os segmentos cadastrados, como edita-los e até mesmo exclui-los!.</p>
+                </div>
+        </div>
         </div>
     </div>
 
-    
+
+<div class="container mb-5">   
     <div class="row d-flex align-items-center">
-        <div class="col-md-6">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Item</th>
-                        <th scope="col">Segmento</th>
-                        <th scope="col">Mt.Reutilizado</th>
-                        <th scope="col">Mt.Biodegradavel</th>
-                        <th scope="col" class="text-right">Modificações</th>
-
-                    </tr>
-
-
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="cores">
+                  <tr class="">
+                    <th class="borda estilo-cor" scope="col">Item</th>
+                    <th class="borda estilo-cor" scope="col">Segmento</th>
+                    <th class="borda estilo-cor" scope="col">Mt.Reutilizado</th>
+                    <th class="borda estilo-cor" scope="col">Mt.Biodegradavel</th>
+                    <th class="borda estilo-cor" scope="col">Modificações</th>
+                  </tr>
                 </thead>
                 <tbody>
-
-                    <tr *ngFor='let cat of listaCategorias'>
-                        <th scope="row">{{cat.id}}</th>
-                        <td>{{cat.segmentoEmpresa}}</td>
-                        <td>{{cat.materialReutilizado}}</td>
-                        <td>{{cat.materialBiodegradavel}}</td>
-                        <td class="d-flex justify-content-end up">
-
-                            <button class="btn btn-info mb-4  fw-bold" [routerLink]="['/Editar', cat.id]">Editar</button>
-                            <button class="btn btn-danger mb-4 mm menu2 fw-bold" [routerLink]="['/Deletar', cat.id]">Apagar</button>
-                    </tr>
+                  <tr *ngFor='let cat of listaCategorias'  class="borda-2">
+                    <th scope="row">{{cat.id}}</th>
+                    <td>{{cat.segmentoEmpresa}}</td>
+                    <td>{{cat.materialReutilizado}}</td>
+                    <td>{{cat.materialBiodegradavel}}</td>
+                    <td class="d-flex justify-content-center up">
+            
+                        <button class="btn btn-outline-success btn-est" [routerLink]="['/Editar', cat.id]">Editar</button>
+                        <button class="btn btn-outline-danger btn-est bt-direita" [routerLink]="['/Deletar', cat.id]">Apagar</button>
+                  </tr>
                 </tbody>
-                <!--btn btn-info mr-3 m-lg-3 tm menu fw-bold-->
-                                <!--btn btn-danger m-3 m-lg-3 tm menu2 fw-bold-->
-
-            </table>
-        </div>
-        <div class="col-md-4 foto">
-
-            <img src="https://i.imgur.com/5UItfFb.png" alt="Mandando mensagem" width="400px" height="400px">
-      
-          </div>
-        
+              </table>
+        </div>        
     </div>
 </div>
+
+
+
+
 
 

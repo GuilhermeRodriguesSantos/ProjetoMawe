@@ -1,0 +1,47 @@
+<div class="tab-pane fade show active " id="nav-TodosProdutos" role="tabpanel" aria-labelledby="nav-TodosProdutos-tab">
+
+    <!-- Card Todos Produtos-->
+
+    <div class="container card-grid">
+        <div class="row d-flex justify-content-center">
+
+            <figure class="card card-product-grid card-md" *ngFor='let produto of listaProdutos'>
+                <a class="img-wrap mb-4" data-abc="true"> <img class="im mt-4" src={{produto.url}}> </a>
+                <figcaption class="info-wrap">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-9 col-xs-9">
+                            <h6 class="title" data-abc="true">{{produto.nome}}</h6> <span class="rated">{{produto.categoria.segmentoEmpresa}}</span> </div>
+                        <div class="col-md-3 col-xs-3">
+                            <div class="rating text-right">Cód: {{produto.id}} </div>
+                            <div><span class="rated">Qtd: {{produto.quantidade}}</span></div>
+                        </div>
+                    </div>
+                </figcaption>
+                <div class="bottom-wrap-payment ">
+                    <figcaption class="info-wrap">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-9">
+                                <h6 class="title" data-abc="true">R$ {{produto.preco}}</h6>
+                            </div>
+
+                            
+                            <div class="col-md-3 col-xs-3">
+                                <div class="rating text-right"><i class="fas fa-briefcase"> {{produto.empresaCriadora.nome}}</i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <button class="btn btn-outline-success  botao">Comprar</button>
+                        </div>
+
+                    </figcaption>
+                </div>
+
+
+            </figure>
+        </div>
+    </div>
+
+    <!-- Card Todos Produtos-->
+</div>

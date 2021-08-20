@@ -21,7 +21,7 @@ export class AuthService {
   }
  
   cadastar(usuario: Usuario) :Observable<Usuario>{
-    return this.http.post<Usuario>(' https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
+    return this.http.post<Usuario>('https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Cadastrar', usuario)
   }
   logado(){
     let ok: boolean = true
@@ -38,12 +38,20 @@ export class AuthService {
 
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(` https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
+    return this.http.get<Usuario>(`https://ecomawe.herokuapp.com/ProjetoMawe/Usuario/Buscar/${id}`)
   }
 
-  loginOff(){
+  logado2(){
     let ok: boolean = false
-    if(environment.menu){
+    if(environment.tipoUsuario == "EMPRESA"){
+      ok = true
+    }
+    return ok
+  }
+
+  logado3(){
+    let ok: boolean = false
+    if(environment.tipoUsuario == "USUARIO"){
       ok = true
     }
     return ok

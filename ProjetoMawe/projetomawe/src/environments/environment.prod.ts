@@ -4,5 +4,6 @@ export const environment = {
   nome: '',
   endereco: '',
   token: '',
-  menu:true
+  menu:true,
+  tipoUsuario: ''
 };
