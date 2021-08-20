@@ -77,8 +77,7 @@
 }
 
 .img-circulo{
-    border-radius:250px;
-   /* box-shadow: 350px 0px 0px 50px rgba(221, 193, 192, 0.4);  */
+    border-radius:250px; 
 }
 
 .img-circular-fundo {
