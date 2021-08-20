@@ -25,8 +25,8 @@
     margin-bottom: 0.625rem;
 }
 
-.mb-25{
-    margin-bottom: 30px;
+.mb-35{
+    margin-bottom: 35px;
 }
 
 .mb-70 {
@@ -34,6 +34,10 @@
 }
 .mb-20{
     margin-bottom: 20px;
+}
+
+.mt-45{
+    margin-top: 45px;
 }
 .font-18{
     font-size: 18px;
@@ -265,4 +269,12 @@ body {
     transition: 500ms;
     border-color:none;
     background-image: linear-gradient(rgb(61, 119, 44), rgb(45,89,32));   
+}
+
+.bg-equipe {
+    background-color: rgb(250, 223, 222) ; 
+}
+
+.bg-image-axel{
+    background-image: url("https://i.imgur.com/woudS1M.png");
 }
