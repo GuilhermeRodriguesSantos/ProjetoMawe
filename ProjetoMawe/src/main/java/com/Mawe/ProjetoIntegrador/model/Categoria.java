@@ -36,6 +36,7 @@ public class Categoria {
 	 * O que diferencia o usuário padrão de uma empresa
 	 * pensar no enumerated
 	 */
+
 	@Enumerated (EnumType.STRING)
 	//@NotNull (message = "é necessário informar o segmento da empresa correta")
 	private TipoCategoria segmentoEmpresa;
