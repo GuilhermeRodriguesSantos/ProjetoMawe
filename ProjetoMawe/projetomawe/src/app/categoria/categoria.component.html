@@ -3,108 +3,121 @@
     <div class="row color-back text-white d-flex justify-content-center">
         <div class="col-md-8">
 
-            <h1 class="fs-54 text-center font-t mb-3 mt-4">Segmentos:</h1>
-            <h5 class="fs-18 text-center font-t">Veja aqui todos os segmentos cadastrados ou Cadastre um novo:</h5>
+            <h1 class="fs-54 text-center font-t mb-2 mt-4">Segmentos</h1>
+            <h5 class="fs-18 text-center font-t mt-4 mb-2">Veja aqui todos os segmentos cadastrados ou Cadastre um novo</h5>
         </div>
-        
-        
-            <div class="row d-flex justify-content-center mt-4 mb-5">
-                <div class="col-md-3">
-                    <div class="form-group mb-3">
-                        <div class="d-flex align-items-center">
-                        <label class="texto-label" for="Segmento">Escolha o Segmemto: </label>
-                        <img src="../../assets/img/icones_segmentos/escolhendo.png" class="direita" width="40px" alt="">
-                        </div>
-                        <select class="form-control estilo-imp" name="Segmento" id="Segmento" (change)='seguimento($event)'>
-                            <option>Segmentos:</option>
-                           <option value="AlimentosEBebidas">AlimentosEBebidas</option>
-                           <option value="AutomoveisEVeiculos">AutomoveisEVeiculos</option>
-                           <option value="BebesECia">BebesECia</option>
-                           <option value="Brinquedos">Brinquedos</option>
-                           <option value="CasaEDecoracao">CasaEDecoracao</option>
-                           <option value="ConstrucaoEFerramentas">ConstrucaoEFerramentas</option>
-                           <option value="CosmeticosEPerfumaria">CosmeticosEPerfumaria</option>
-                           <option value="Descartaveis">Descartaveis</option>
-                           <option value="Eletrodomesticos">Eletrodomesticos</option>
-                           <option value="Fitness">Fitness</option>
-                           <option value="Informatica">Informatica</option>
-                           <option value="ModaEAcessorios">ModaEAcessorios</option>
-                           <option value="PapelariaEEscritorio">PapelariaEEscritorio</option>
-                           <option value="PetShop">PetShop</option>
-                           <option value="SexShop">SexShop</option>
-                       </select>
+
+        <div class=" row d-flex align-items-center">
+            <div class="col-md-7">
+
+                <div class="row d-flex justify-content-center mb-5">
+                    <div class="col-md-6">
+                        <button class="btn btn-lg btn-light text-btn" data-bs-toggle="modal" data-bs-target="#NovoSegmento">Novo Segmento</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+
+                <div class="row d-flex justify-content-center mb-5">
+                    <div class="col-md-5">
+                        <a class="btn btn-lg btn-outline-light text-btn" href="#Segmentos">Ver Segmentos</a>
                     </div>
 
-                    <div class="form-group">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container mt-5 mb-5" id="Segmentos">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead class="cores">
+                    <tr class="">
+                        <th class="borda estilo-cor" scope="col">Item</th>
+                        <th class="borda estilo-cor" scope="col">Segmento</th>
+                        <th class="borda estilo-cor" scope="col">Mt.Reutilizado</th>
+                        <th class="borda estilo-cor" scope="col">Mt.Biodegradavel</th>
+                        <th class="borda estilo-cor" scope="col">Modificações</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor='let cat of listaCategorias' class="borda-2">
+                        <th scope="row">{{cat.id}}</th>
+                        <td>{{cat.segmentoEmpresa}}</td>
+                        <td>{{cat.materialReutilizado}}</td>
+                        <td>{{cat.materialBiodegradavel}}</td>
+                        <td class="d-flex justify-content-center up">
+
+                            <button class="btn btn-outline-success btn-est" [routerLink]="['/Editar', cat.id]">Editar</button>
+                            <button class="btn btn-outline-danger btn-est bt-direita" [routerLink]="['/Deletar', cat.id]">Apagar</button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Modal Novo Segmento -->
+<div class="modal fade" id="NovoSegmento" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bkc">
+                <h3 class="modal-title" id="staticBackdropLabel">Novo Segmento</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bis">
+
+                <div class="form-group mt-2 mb-2">
+                    <label for="Nome">Material Reutilizado</label>
+                    <input [(ngModel)]='categoria.materialReutilizado' type="text" class="form-control mb-3 estilo-imp" value="materialReutilizado" placeholder=" % do tipo de material Reutilizável">
+                </div>
+
+                <div class="form-group mt-2 mb-2">
+                    <label for="descricao">Material Biodegradável</label>
+                    <input [(ngModel)]='categoria.materialBiodegradavel' type="text" class="form-control estilo-imp" value="materialBiodegradavel" placeholder="% do tipo de material Biodegradável">
+                </div>
+
+                <div class="form-group mb-3">
                     <div class="d-flex align-items-center">
-                        <label class="texto-label" for="materialReutilizado">Digite a % de Material Reutilizável:</label>
-                        <img src="../../assets/img/icones_segmentos/empresario-com-sinal-de-porcentagem.png" width="30px" class="direita" alt="">
+                        <label class="texto-label" for="Segmento">Escolha o Segmento: </label>
+                        <img src="../../assets/img/icones_segmentos/escolhendo.png" class="direita" width="40px" alt="">
                     </div>
-                        <input [(ngModel)]='categoria.materialReutilizado' type="text" class="form-control mb-3 estilo-imp" value="materialReutilizado" placeholder=" % do tipo de material Reutilizável">
-                    </div>
-
-                    <div class="form-group">
-                        <div class="d-flex align-items-center">
-                            <label class="texto-label" for="materialBiodegradavel">Digite a % de Material Biodegradável:</label>
-                            <img src="../../assets/img/icones_segmentos/empresario-com-sinal-de-porcentagem.png" width="30px" class="direita" alt="">
-                        </div>
-                        <input [(ngModel)]='categoria.materialBiodegradavel' type="text" class="form-control estilo-imp" value="materialBiodegradavel" placeholder="% do tipo de material Biodegradável">
-                    </div>
-
-                    <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-outline-light bt" (click)='cadastrar()'>Cadastrar</button>
-                    </div>
-
+                    <select class="form-control estilo-imp" name="Segmento" id="Segmento" (change)='seguimento($event)'>
+                            <option class="text-secondary">Escolha um Segmento</option> 
+                           <option value="AlimentosEBebidas">Alimentos e Bebidas</option>
+                           <option value="AutomoveisEVeiculos">Automoveis e Veiculos</option>
+                           <option value="BebesECia">Bebês e Cia</option>
+                           <option value="Brinquedos">Brinquedos</option>
+                           <option value="CasaEDecoracao">Casa e Decoração</option>
+                           <option value="ConstrucaoEFerramentas">Construção e Ferramentas</option>
+                           <option value="CosmeticosEPerfumaria">Cosméticos e Perfumaria</option>
+                           <option value="Descartaveis">Descartáveis</option>
+                           <option value="Eletrodomesticos">Eletrodomésticos</option>
+                           <option value="Fitness">Fitness</option>
+                           <option value="Informatica">Informática</option>
+                           <option value="ModaEAcessorios">Moda e Acessérios</option>
+                           <option value="PapelariaEEscritorio">Papelaria e Escritório</option>
+                           <option value="PetShop">Pet Shop</option>
+                           <option value="SexShop">Sex Shop</option>
+                       </select>
                 </div>
 
             </div>
-    </div>
-</div>
-
-<div class="container-flex">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron jumbotron-fluid cor-j mb-4">
-                  <h1 class="display-4 text-center font-j">Visualize seus Segmentos</h1>
-                  <p class="lea text-center font-j">Aqui você pode verificar os segmentos cadastrados, como edita-los e até mesmo exclui-los!.</p>
-                </div>
-        </div>
+            <div class="modal-footer text-light bkc">
+                <button type="button" class="btn btn-danger btn-est" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success btn-est" data-bs-dismiss="modal" (click)='cadastrar()'>Cadastrar</button>
+            </div>
         </div>
     </div>
 
-
-<div class="container mb-5">   
-    <div class="row d-flex align-items-center">
-        <div class="col-md-12">
-            <table class="table">
-                <thead class="cores">
-                  <tr class="">
-                    <th class="borda estilo-cor" scope="col">Item</th>
-                    <th class="borda estilo-cor" scope="col">Segmento</th>
-                    <th class="borda estilo-cor" scope="col">Mt.Reutilizado</th>
-                    <th class="borda estilo-cor" scope="col">Mt.Biodegradavel</th>
-                    <th class="borda estilo-cor" scope="col">Modificações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor='let cat of listaCategorias'  class="borda-2">
-                    <th scope="row">{{cat.id}}</th>
-                    <td>{{cat.segmentoEmpresa}}</td>
-                    <td>{{cat.materialReutilizado}}</td>
-                    <td>{{cat.materialBiodegradavel}}</td>
-                    <td class="d-flex justify-content-center up">
-            
-                        <button class="btn btn-outline-success btn-est" [routerLink]="['/Editar', cat.id]">Editar</button>
-                        <button class="btn btn-outline-danger btn-est bt-direita" [routerLink]="['/Deletar', cat.id]">Apagar</button>
-                  </tr>
-                </tbody>
-              </table>
-        </div>        
-    </div>
 </div>
-
-
-
-
-
-
+<!--/Modal Novo Produto -->
