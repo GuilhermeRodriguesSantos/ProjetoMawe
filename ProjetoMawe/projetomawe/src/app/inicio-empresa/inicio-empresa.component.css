@@ -195,7 +195,6 @@ a {
 
 .st-in {
     font-style: oblique;
-    color: white;
     font-size: larger;
 }
 
@@ -212,4 +211,8 @@ a {
 
 .st-in h3 {
     color: rgb(82, 79, 79);
+}
+
+input {
+    border-radius: 20px;
 }

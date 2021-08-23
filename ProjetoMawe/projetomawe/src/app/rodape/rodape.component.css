@@ -1,31 +1,32 @@
 .cor {
-   /* background-image: url(../../assets/img/Rodapé-atualizado.png);*/
- 
-   background-color: #2D5920;
+    /* background-image: url(../../assets/img/Rodapé-atualizado.png);*/
+    background-color: #2D5920;
     text-align: center;
     width: 100%;
 }
 
-.foto{
+.foto {
     width: 400px;
     margin-left: 45px;
 }
 
-.estilo-texto{
+.estilo-texto {
     color: white;
     text-align: justify;
     margin-left: 15px;
 }
 
-.text-center{
+.text-center {
     text-align: center;
-    color:white;
+    color: white;
     margin-left: 15px;
 }
-.link{
+
+.link {
     text-decoration: none;
     color: white;
 }
+
 .fab {
     font-size: 45px;
     text-decoration: none;
@@ -48,34 +49,36 @@ li {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.fa-linkedin{
-    color:white;
-}
-.fa-linkedin:hover{
-    color:  #0e76a8;
-}
-
-.fa-github-square{
+.fa-linkedin {
     color: white;
 }
-.fa-github-square:hover{
+
+.fa-linkedin:hover {
+    color: #0e76a8;
+}
+
+.fa-github-square {
+    color: white;
+}
+
+.fa-github-square:hover {
     color: #171515;
 }
 
-.fa-facebook-square{
-    color:white
+.fa-facebook-square {
+    color: white
 }
 
-.fa-facebook-square:hover{
+.fa-facebook-square:hover {
     color: #3b5998;
 }
 
 .fa-instagram {
-    color:white;
+    color: white;
 }
 
-.fa-instagram:hover{
-    color:  #E1306C;
+.fa-instagram:hover {
+    color: #E1306C;
 }
 
 .item-rodape-chamativo {
