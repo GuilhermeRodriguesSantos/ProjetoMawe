@@ -1,9 +1,10 @@
+<!-- Background Inicial  -->
 <div class="container-flex">
     <div class=" row cor d-flex align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 text-white">
-                    <h1 class="tamanho-texto">Olá, {{usuario.nome}}!</h1>
+                    <h1 class="tamanho-texto mt-5">Olá, {{usuario.nome}}!</h1>
                     <h5 class="tamanho-texto2">Pronto para Cadastrar seus Segmentos e Produtos?</h5>
                 </div>
             </div>
@@ -14,13 +15,22 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
 
-            <img src="../../assets/img/Início/Environment-bro (1).png" alt="" width="500px">
+                    <h2 class="text-white mt-5">Dúvidas com o cadastro?</h2>
+                </div>
+                <div class="row d-flex justify-content-center mt-4 mb-2 ">
+                    <div class="col-md-5">
+                        <button class="btn btn-lg btn-outline-light text-btn" data-bs-toggle="modal" data-bs-target="#tutorial">Clique aqui</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
+<!-- /Background Inicial  -->
 
 
 <!-- Tab -->
@@ -113,46 +123,44 @@
 
     <!--/Tab -->
 
-    <!-- Modal -->
+    <!-- Modal Novo Produto -->
     <div class="modal fade" id="NovoProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog st-in">
             <div class="modal-content">
-                <div class="modal-header bkc text-light">
-                    <h4 class="modal-title" id="staticBackdropLabel">Novo Produto</h4>
+                <div class="modal-header bkc">
+                    <h3 class="modal-title" id="staticBackdropLabel">Novo Produto</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body bis">
 
-                    <div class="form-group">
+                    <div class="form-group mt-2 mb-2">
                         <label for="Nome">Nome</label>
                         <input [(ngModel)]='Produto.nome' type="text" class="form-control" id="nome" placeholder="Nomeie o Produto">
                     </div>
 
+                    <div class="form-group mt-2 mb-2">
+                        <label for="descricao">Descrição</label>
+                        <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descreva o produto">
+                    </div>
 
-                    <div class="form-group">
+                    <div class="form-group mt-2 mb-2">
                         <label for="preco">Preço</label>
                         <input [(ngModel)]='Produto.preco' type="number" class="form-control" id="preco" placeholder="Digite o valor do produto:">
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="form-group mt-2 mb-2">
                         <label for="Quantidade">Quantidade</label>
                         <input [(ngModel)]='Produto.quantidade' type="number" class="form-control" id="Quantidade" placeholder="Insira a quantidade do produto">
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="descricao">Descrição</label>
-                        <input [(ngModel)]='Produto.descricao' type="text" class="form-control" id="descricao" placeholder="Descreva o produto">
-                    </div>
-
-
-                    <div class="form-group">
+                    <div class="form-group mt-2 mb-2">
                         <label for="url">Url</label>
                         <input [(ngModel)]='Produto.url' type="text" class="form-control" id="url" placeholder="Insira o link da imagem do produto">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mt-2 mb-2">
                         <label for="Categoria">Escolha um Segmento ou | <a data-bs-dismiss="modal" routerLink="/categoria">Cadastre um novo</a></label>
                         <select name="Categoria" id="Categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
                 <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.segmentoEmpresa}}</option>
@@ -168,4 +176,65 @@
         </div>
 
     </div>
-    <!--/Modal -->
+    <!--/Modal Novo Produto -->
+
+
+    <!-- Modal Carrosel Tutorial-->
+    <div class="modal fade" id="tutorial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header bkc">
+                    <h3 class="modal-title" id="staticBackdropLabel">Tutorial de Cadastro</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../../assets/img/Tutorial Cards/Card1.png" class="d-block w-100" alt="..." height="500px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/Tutorial Cards/Card2.png" class="d-block w-100" alt="..." height="500px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/Tutorial Cards/Card3.png" class="d-block w-100" alt="..." height="500px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/Tutorial Cards/Card4.png" class="d-block w-100" alt="..." height="500px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/Tutorial Cards/Card5.png" class="d-block w-100" alt="..." height="480px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/Tutorial Cards/Card6.png" class="d-block w-100" alt="..." height="480px">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">Anterior</span>
+                                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="visually-hidden">proximo</span>
+                                        </button>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer bkc">
+                    <button type="button" class="btn btn-danger btn-est" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
