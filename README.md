@@ -1,3 +1,7 @@
+<b>Site:</b> https://wonderful-nobel-c2fd52.netlify.app
+<p>(Atenção: É comum demorar alguns segundos para a primeira conexão com o back, pois o deploy é em uma plataforma que fica hibernando, Heroku precisa acordar)</p>
+<b>Aplicação back-end:</b> https://ecomawe.herokuapp.com/swagger-ui/
+
 ## Mawé
 
 Fazemos conexões para demonstrar que há outras maneiras de criar e consumir, sem gerar grandes impactos a natureza.
@@ -28,6 +32,12 @@ Como uma maneira de reagir ao descarte de materiais que se acumulam na atmosfera
 * [CSS](https://devdocs.io/css/) 
 * [Typescript](https://typedoc.org/guides/doccomments/) 
 
+## ⚙️ Metodologia Ágil e Scrum
+
+Projeto desenvolvido em grupo, durante o processo de criação aprendemos e aplicamos juntos.
+Utilizado principalmente live codes e trello para manter a comunicação efetiva.
+Foi criado uma documentação temporária.
+
 ## ✒️ Autores
 
 * *Amanda Brito* - [AmandaBritoPereira](https://github.com/AmandaBritoPereira)
@@ -37,15 +47,9 @@ Como uma maneira de reagir ao descarte de materiais que se acumulam na atmosfera
 * *Tainá Pimenta* - [TainaPimenta](https://github.com/TainaPimenta)
 * *Vinicius Lavado* - [Viniciuslavado](https://github.com/Viniciuslavado)
 
-## ⚙️ Metodologia Ágil e Scrum
-
-Projeto desenvolvido em grupo, durante o processo de criação aprendemos e aplicamos juntos.
-Utilizado principalmente live codes e trello para manter a comunicação efetiva.
-Foi criado uma documentação temporária e após finalização do projeto, resumida para este Readme.
-
 ## 📦 Notas
 
-Para reimplementar o projeto Angular, após baixado, instale a pasta node_modules, informando no Terminal de escolha: npm install.
+Para reimplementar o projeto Angular, após baixar, instale a pasta node_modules, informando no Terminal de escolha: npm install.
 
 ## 🎁 Expressões de gratidão
 
